@@ -14,6 +14,7 @@ Settings	Settingsfile	\OKAC\Settings\GeneralAD.txt
 Settings	SettingsfileSCREEN	\OKAC\Settings\Screen.txt
 Settings	SettingsfileCONFLICT	\OKAC\Settings\Lists.txt
 Settings	SettingsfileVCCS	\OKAC\Settings\VCCS.txt
+Settings	SettingsfileSTUP	\OKAC\Settings\Lists.txt
 Settings	AselKey	5111808
 Settings	FreqKey	3604480
 Settings	airlines	\OKAC\ICAO\ICAO_Airlines.txt
