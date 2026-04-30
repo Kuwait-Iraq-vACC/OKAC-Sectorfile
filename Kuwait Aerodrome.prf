@@ -67,6 +67,7 @@ Plugins	Plugin8	\OKAC\Plugins\CDM\CDM.dll
 Plugins	Plugin8Display0	DelHel
 Plugins	Plugin8Display1	Ground Radar display
 Plugins	Plugin8Display2	Standard ES radar screen
+Plugins	Plugin9	\OKAC\Plugins\VATCAN Plugin\VATCANBookings.dll
 LastSession	connecttype	0
 LastSession	callsign	[INITIALS]_OBS
 LastSession	facility	0
