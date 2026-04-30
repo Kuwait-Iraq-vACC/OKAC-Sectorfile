@@ -11,8 +11,4 @@ PROFILE:OKAC_U_CTR:300:6
 ATIS2:"Kuwait Upper"
 ATIS3:Give us feedback! - vats.im/khatcfdb
 ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
-PROFILE:OKAC_ACC_FMP:300:6
-ATIS2:"Kuwait Radar Flow Manager" - DCL [OKAC]
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
 END
