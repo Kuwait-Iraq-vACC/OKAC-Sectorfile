@@ -50,7 +50,6 @@ Plugins	Plugin1	\OKAC\Plugins\Audio for VATSIM\AfvEuroScopeBridge.dll
 Plugins	Plugin2	\OKAC\Plugins\TopSky - Light\TopSky.dll
 Plugins	Plugin3	\OKAC\Plugins\GRplugin\GRplugin.dll
 Plugins	Plugin4	\OKAC\Plugins\VATCAN Plugin\VATCANBookings.dll
-Plugins	Plugin4Display0	DelHel
 Plugins	Plugin5	\OKAC\Plugins\VFPC\VFPC.dll
 Plugins	Plugin5Display0	DelHel
 Plugins	Plugin2Display0	Standard ES radar screen
