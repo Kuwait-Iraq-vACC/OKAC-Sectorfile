@@ -7,6 +7,7 @@ CPDLC_PDC_PlaySound=1
 
 Areas_NOTAM_Activation=1
 Airspace_ASSR_Type=2
+Airspace_ASSR_AutoAssign_Type=2
 
 RDF_Mode=2
 RDF_Floor=0
