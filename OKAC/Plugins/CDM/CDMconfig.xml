@@ -28,7 +28,7 @@
 	<sftpConnection mode="false" />
 	<Server mode="true" />
 	<Su_Wait mode="false" />
-	<flashingMode tobtLastMin= "false" tsatFirstMin="false" tsatLastMin= "true"/>
+	<flashingMode tobtLastMin= "true" tsatFirstMin="false" tsatLastMin= "true"/>
 	<reqTobtPriority mode="true" />
 	<eventPriority mode="true" />
 	<autoSetTobtFromEvSlot mode="true" />
