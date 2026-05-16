@@ -1,5 +1,6 @@
 # Add info here for slot controlled events
 # format: [CID],[CTOT]
+1702382,0600
 1805802,1843
 1344871,1845
 1912275,1847
