@@ -7,7 +7,7 @@
 	<bmi mode="false" />
 	<pilotTobt mode="true" />
 	<autoAtot mode="true" />
-	<invalidateAtTsat mode="true" />
+	<invalidateAtTsat mode="false" />
 	<invalidateAtTobt mode="true" />
 	<readySetTsac mode="true" />
 	<Rates url="https://raw.githubusercontent.com/khaleej-vacc/Khaleej-Sector-File-OKAC/refs/heads/main/OKAC/Plugins/CDM/rate.txt" />
