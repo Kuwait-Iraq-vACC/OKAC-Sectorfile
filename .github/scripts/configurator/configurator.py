@@ -75,7 +75,7 @@ def validate_cid(cid):
 
 # Ratings stored as EuroScope/VATSIM numeric codes
 RATINGS = [
-    ("Observer (BS)",             "0"),
+    ("Observer (OBS)",             "0"),
     ("Developing Controller (S1)", "1"),
     ("Aerodrome Controller (S2)",  "2"),
     ("Terminal Controller (S3)",   "3"),
