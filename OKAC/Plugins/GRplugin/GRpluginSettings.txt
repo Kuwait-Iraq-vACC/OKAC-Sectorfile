@@ -12,7 +12,7 @@ Color_SelectedLabelFill_Gnd=0,0,0
 Window_APP_Scale=11
 Window_APP_AltFilter=6000
 
-Maps_URL=https://raw.githubusercontent.com/khaleej-vacc/Khaleej-Sector-File-OKAC/main/OKAC/Plugins/GRplugin/GRpluginMaps.txt
+Maps_URL=https://raw.githubusercontent.com/Kuwait-Iraq-vACC/OKAC-Sectorfile/refs/heads/main/OKAC/Plugins/GRplugin/GRpluginMaps.txt
 Maps_FontSize=10
 GroundLabel_Font=EuroScope
 GroundLabel_FontSize=11

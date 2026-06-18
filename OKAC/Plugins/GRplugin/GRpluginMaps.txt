@@ -1,8 +1,3 @@
-//&preserve File created for the Khaleej vACC - OKKK FIR 
-//&preserve Developed and maintained by the Khaleej vACC Operations Department
-//&preserve
-//&preserve To be used on the VATSIM Network only
-
 // SMGCS REGIONS + GEO COLOR DEFINITIONS
 COLORDEF:SMGCS_TARMAC:50:50:50
 COLORDEF:SMGCS_GRASS:20:20:20
