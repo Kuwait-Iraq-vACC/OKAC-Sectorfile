@@ -63,10 +63,13 @@ jobs:
     runs-on: windows-latest
     needs: [changes, test]
     if: |
-      github.event_name == 'workflow_dispatch' ||
-      (needs.changes.outputs.source == 'true' &&
-       github.event_name == 'push' &&
-       github.ref == 'refs/heads/main')
+      always() &&
+      needs.test.result == 'success' &&
+      (github.event_name == 'workflow_dispatch' ||
+       (needs.changes.result == 'success' &&
+        needs.changes.outputs.source == 'true' &&
+        github.event_name == 'push' &&
+        github.ref == 'refs/heads/main'))
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
