@@ -1,0 +1,110 @@
+name: Compile Configurator.exe
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - ".github/scripts/configurator-okac/**"
+      - ".github/workflows/configurator_okac.yml"
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - ".github/scripts/configurator-okac/**"
+      - ".github/workflows/configurator_okac.yml"
+
+jobs:
+
+  changes:
+    name: Detect source changes
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    permissions:
+      contents: write
+    outputs:
+      source: ${{ steps.filter.outputs.source }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for source changes
+        uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            source:
+              - '.github/scripts/configurator-okac/**'
+              - '.github/workflows/configurator_okac.yml'
+
+  test:
+    name: Run tests
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install Pillow customtkinter pyinstaller
+
+      - name: Skip tests
+        run: echo "No tests configured"
+
+  build-exe:
+    name: Build executable
+    runs-on: windows-latest
+    needs: [changes, test]
+    if: |
+      needs.changes.outputs.source == 'true' &&
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install Pillow customtkinter pyinstaller
+
+      - name: Compile executable
+        run: |
+          cd .github/scripts/configurator-okac
+          Remove-Item -Force Configurator.spec -ErrorAction SilentlyContinue
+          Remove-Item -Force configurator.spec -ErrorAction SilentlyContinue
+          pyinstaller --noconfirm --onefile --windowed --name Configurator --icon logo.ico --add-data "logo.ico;." --add-data "banner.png;." configurator.py
+
+      - name: Move executable to destination
+        run: |
+          $src = ".github\scripts\configurator-okac\dist\Configurator.exe"
+          $dst = "OKAC\Plugins\Configurator"
+          if (Test-Path $src) {
+            New-Item -ItemType Directory -Force -Path $dst | Out-Null
+            Copy-Item -Path $src -Destination "$dst\Configurator.exe" -Force
+            Write-Host "Successfully copied Configurator.exe to $dst"
+          } else {
+            Write-Host "ERROR: Configurator.exe not found at $src"
+            exit 1
+          }
+
+      - name: Commit executable
+        run: |
+          git config --local user.email "github-actions@users.noreply.github.com"
+          git config --local user.name "ORBB Automation"
+          git add OKAC/Plugins/Configurator/Configurator.exe
+          git diff --staged --quiet || git commit -m "chore: update OKAC Configurator.exe [skip ci]"
+          git pull --rebase origin main
+          git push
