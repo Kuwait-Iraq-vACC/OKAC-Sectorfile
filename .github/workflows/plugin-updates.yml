@@ -17,7 +17,7 @@ jobs:
       VERSION_FILE: .github/plugin_versions.json
       BADGES_DIR: .github/badges
       REPO_OWNER: Kuwait-Iraq-vACC
-      REPO_NAME: ORBB-Sectorfile
+      REPO_NAME: OKAC-Sectorfile
 
     steps:
       - name: Checkout
