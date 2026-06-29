@@ -1,3 +1,0 @@
-##----- Capacity Availability Document -----##
-#--- Kuwait [OKAC] ---#
-OKKK,50
