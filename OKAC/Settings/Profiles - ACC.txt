@@ -1,14 +1,10 @@
 PROFILE
-PROFILE:[INITIALS]_OBS:300:0
-ATIS2:"Kuwait Observer"
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
 PROFILE:OKAC_CTR:300:6
-ATIS2:"Kuwait Radar" - DCL [OKAC]
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
+ATIS2:Kuwait Radar | DCL [OKKK]
+ATIS3:Check coverage at vatglasses.uk
+ATIS4:Submit feedback at vats.im/kwiq-fb
 PROFILE:OKAC_U_CTR:300:6
-ATIS2:"Kuwait Upper"
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
+ATIS2:Kuwait Radar
+ATIS3:Check coverage at vatglasses.uk
+ATIS4:Submit feedback at vats.im/kwiq-fb
 END

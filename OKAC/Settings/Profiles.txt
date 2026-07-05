@@ -1,38 +1,34 @@
 PROFILE
-PROFILE:[INITIALS]_OBS:300:0
-ATIS2:"Khaleej vACC - Observer"
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
-PROFILE:OKKK_P_DEL:10:2
-ATIS2:"Kuwait Planner" - DCL [OKKK] | TOBT @ vats.im/vdgs
-ATIS3:Request clearance 10 minutes before departure.
-ATIS4:Give us feedback! - vats.im/khatcfdb
-PROFILE:OKKK_DEL:10:2
-ATIS2:"Kuwait Delivery" - DCL [OKKK] | TOBT @ vats.im/vdgs
-ATIS3:Request clearance 10 minutes before departure.
-ATIS4:Give us feedback! - vats.im/khatcfdb
-PROFILE:OKKK_1_GND:20:3
-ATIS2:"Kuwait Ground" - DCL [OKKK] | TOBT @ vats.im/vdgs
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
-PROFILE:OKKK_2_GND:20:3
-ATIS2:"Kuwait Ground" - DCL [OKKK] | TOBT @ vats.im/vdgs
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
 PROFILE:OKKK_TWR:50:4
-ATIS2:"Kuwait Tower" - DCL [OKKK] | TOBT @ vats.im/vdgs
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
-PROFILE:OKAJ_TWR:50:4
-ATIS2:"Al Jaber Tower"
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
-PROFILE:OKAS_GND:20:3
-ATIS2:"Al Salem Ground"
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
+ATIS2:Kuwait Tower | DCL [OKKK]
+ATIS3:Submit TOBT @ vats.im/vdgs
+ATIS4:Submit feedback at vats.im/kwiq-fb
+PROFILE:OKKK_1_GND:20:3
+ATIS2:Kuwait Ground | DCL [OKKK]
+ATIS3:Submit TOBT @ vats.im/vdgs
+ATIS4:Submit feedback at vats.im/kwiq-fb
+PROFILE:OKKK_2_GND:20:3
+ATIS2:Kuwait Ground | DCL [OKKK]
+ATIS3:Submit TOBT @ vats.im/vdgs
+ATIS4:Submit feedback at vats.im/kwiq-fb
+PROFILE:OKKK_P_DEL:10:2
+ATIS2:Kuwait Delivery | DCL [OKKK]
+ATIS3:Submit TOBT @ vats.im/vdgs
+ATIS4:Request clearance 10 minutes prior to start up
+PROFILE:OKKK_DEL:10:2
+ATIS2:Kuwait Delivery | DCL [OKKK]
+ATIS3:Submit TOBT @ vats.im/vdgs
+ATIS4:Request clearance 10 minutes prior to start up
 PROFILE:OKAS_TWR:50:4
-ATIS2:"Al Salem Tower"
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
+ATIS2:Al Salem Tower
+ATIS3:
+ATIS4:Submit feedback at vats.im/kwiq-fb
+PROFILE:OKAS_GND:20:3
+ATIS2:Al Salem Ground
+ATIS3:
+ATIS4:Submit feedback at vats.im/kwiq-fb
+PROFILE:OKAJ_TWR:50:4
+ATIS2:Al Jaber Tower
+ATIS3:
+ATIS4:Submit feedback at vats.im/kwiq-fb
 END

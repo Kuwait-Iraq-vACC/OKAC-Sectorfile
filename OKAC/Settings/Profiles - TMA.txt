@@ -1,22 +1,18 @@
 PROFILE
-PROFILE:[INITIALS]_OBS:300:0
-ATIS2:"Kuwait Observer"
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
 PROFILE:OKKK_APP:150:5
-ATIS2:"Kuwait Approach" - DCL [OKKK] | TOBT @ vats.im/vdgs
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
+ATIS2:Kuwait Approach | DCL [OKKK]
+ATIS3:Check coverage at vatglasses.uk
+ATIS4:Submit feedback at vats.im/kwiq-fb
 PROFILE:OKKK_F_APP:150:5
-ATIS2:"Kuwait Director" - CONTACT WITH CALLSIGN ONLY!
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
+ATIS2:Kuwait Director
+ATIS3:Contact with callsign only! "Kuwait Director, KAC123"
+ATIS4:Submit feedback at vats.im/kwiq-fb
 PROFILE:OKKK_FX_APP:150:5
 ATIS2:"Kuwait Director" - CONTACT WITH CALLSIGN ONLY!
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
+ATIS3:Check coverage at vatglasses.uk
+ATIS4:Submit feedback at vats.im/kwiq-fb
 PROFILE:OKAJ_APP:150:5
-ATIS2:"Al Jaber Control" - Covering OKAS and OKAJ.
-ATIS3:Give us feedback! - vats.im/khatcfdb
-ATIS4:Welcome to Kuwait | Visit khaleejvacc.net
+ATIS2:Al Jaber Control
+ATIS3:Covering OKAS and OKAJ
+ATIS4:Submit feedback at vats.im/kwiq-fb
 END
