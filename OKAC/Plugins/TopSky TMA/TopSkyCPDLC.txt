@@ -2,4 +2,4 @@
 DCL:OKKK:SID:<callsign> CLRD TO <ades> OFF <drwy> VIA <sid> INITIAL CLIMB <cfl> SQUAWK <assr> NEXT FREQ <freq_own>
 
 [STATIONS]
-LOGIN:OKKK:KUWAIT:BKA
+LOGIN:OKKK:KUWAIT:KKA
