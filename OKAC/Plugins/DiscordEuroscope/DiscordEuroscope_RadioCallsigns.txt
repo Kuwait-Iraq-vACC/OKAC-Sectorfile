@@ -1,7 +1,0 @@
-OKAC_CTR Kuwait Radar
-OKAC_E_CTR Kuwait Radar
-OKBK_APP Kuwait Approach
-OKBK_E_APP Kuwait Approach
-OKBK_TWR Kuwait Tower
-OKBK_GND Kuwait Ground
-OKBK_DEL Kuwait Delivery
