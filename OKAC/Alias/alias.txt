@@ -12,7 +12,7 @@
 ;                                                                                                                         ;
 ;=========================================================================================================================;
 ;                                                                                                                         ;
-;  ALL RIGHTS RESERVED � AeroNav Association. NAV-DATA � NAVIGRAPH.                                                       ;
+;  ALL RIGHTS RESERVED � AeroNav Association. NAV-DATA � NAVIGRAPH.                                                      ;
 ;  FILES MUST NOT BE DISTRIBUTED OUTSIDE OF AERONAV SERVICES!                                                             ;
 ;                                                                                                                         ;
 ;=========================================================================================================================;
@@ -50,11 +50,11 @@
 ;*** Logging On/Off ***
 .on /Hello, $radioname is online
 .welcome Hello, welcome. Departing RWY$deprwy($1) arriving RWY$arrrwy($1). Information $atiscode($1). Zone $2
-.nh /Closing soon, no handoffs.
-.off /$radioname is now closed.
-.off5 /$radioname is closing in 5 minutes.
-.off10 /$radioname is closing in 10 minutes.
-.offh /$radioname is closing on the hour.
+.nh /Closing soon, no handoffs. 
+.off /$radioname is now closed. 
+.off5 /$radioname is closing in 5 minutes. 
+.off10 /$radioname is closing in 10 minutes. 
+.offh /$radioname is closing on the hour. 
 .cl ALL STATIONS, ALL STATIONS, $radioname ($callsign) is now closing. Monitor $radioname($1) ($atccallsign($1)), $freq($1)
 .cluni ALL STATIONS, ALL STATIONS, $radioname ($callsign) is now closing. Monitor advisory, 122.800
 .cladv ALL STATIONS, ALL STATIONS, $radioname ($callsign) is now closing. Monitor advisory, 122.800
@@ -106,19 +106,19 @@
 .cmac monitor 122.800. Contact me on $com after the crossing
 .wf I am not expecting you, check again with the previous controller
 ;*** Coordination ***
-.rrls Request release of $aircraft
-.rlsd $aircraft released $1
-.direct Request $aircraft to $1
+.rrls Request release of $aircraft 
+.rlsd $aircraft released $1 
+.direct Request $aircraft to $1 
 ;*** CDM ***
-.newrte Re-route via $uc($1) then as filed. Advise able to accept.
-.slot Check your slot time at https://vats.im/vdgs
-.tobt Submit your TOBT at https://vats.im/vdgs
+.newrte Re-route via $uc($1) then as filed. Advise able to accept. 
+.slot Check your slot time at https://vats.im/vdgs 
+.tobt Submit your TOBT at https://vats.im/vdgs 
 ;*** Departure Clearances ***
-.clr Cleared to $arr, $sid departure, climb altitude $temp, squawk $squawk
-.clrhdg Cleared to $arr, after departure runway $1 climb straight ahead altitude $temp, squawk $squawk
+.clr Cleared to $arr, $sid departure, climb altitude $temp, squawk $squawk 
+.clrhdg Cleared to $arr, after departure runway $1 climb straight ahead altitude $temp, squawk $squawk 
 .clrvec Cleared to $arr, after departure runway $1 fly heading $2, climb altitude $temp, squawk $squawk
-.read Readback correct, report ready.
-.rbc Readback correct, report ready.
+.read Readback correct, report ready. 
+.rbc Readback correct, report ready. 
 .pdc .msg $aircraft $dep PDC $aircraft CLRD TO $arr OFF $deprwy($dep). VIA $sid. INIT CLB $temp. SQUAWK $squawk. NEXT FREQ $com. NO READBACK REQUIRED. SET YOUR TOBT @ https://vats.im/vdgs
 ;*** Pushback and Startup ***
 .p Push and start approved, runway $deprwy($dep)
@@ -290,13 +290,13 @@
 .cilsz Cleared for ILS Z approach runway $arrrwy($arr)
 .cilszre Cleared for ILS Z approach runway $arrrwy($arr), report established
 .crnp Cleared for RNP approach runwy $arrrwy($arr)
-.cva Cleared visual approach runway $arrrwy($arr),
+.cva Cleared visual approach runway $arrrwy($arr), 
 .leave Leave $uc($1) heading $2
 .rjs Rejoin STAR at $uc($1)
 .cdd Cleared direct $uc($1), descend to $temp
 .cddq Cleared direct $uc($1), descend to $temp, QNH $altim($arr)
 .dwp Descend with the procedure
-.ad The aerodrome is at your $oclock($1), $dist($1) miles. Report in sight
+.ad The aerodrome is at your $oclock($1), $dist($1) miles. Report in sight 
 ;*** ACC ***
 .cd Cleared direct $uc($1)
 .ltrkrc Left of track approved, report clear
