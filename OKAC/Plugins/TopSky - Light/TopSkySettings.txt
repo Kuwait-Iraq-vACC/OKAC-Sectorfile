@@ -3,9 +3,6 @@ Maps_URL=https://raw.githubusercontent.com/Kuwait-Iraq-vACC/OKAC-Sectorfile/refs
 Setup_COOPANS=1
 Setup_AutoSignIn=1
 
-CPDLC_PlaySound=1
-CPDLC_PDC_PlaySound=1
-
 Areas_NOTAM_Activation=1
 Airspace_ASSR_Type=2
 Airspace_ASSR_AutoAssign_Type=2
@@ -92,15 +89,18 @@ Shortcut_RadarMenu_Combo=0x00
 
 SAP_Floor=3500
 
-CPDLC_AHDG=1
-CPDLC_ASP=1
-CPDLC_AutoAcceptLogon=1
+CPDLC_Default=0
+CPDLC_MinLevel=150
+CPDLC_Transfer=1
 CPDLC_CFL=1
 CPDLC_DCT=1
-CPDLC_MinLevel=160
+CPDLC_AHDG=1
+CPDLC_ASP=1
+CPDLC_AutoAcceptLogon=0
+Window_CPDLC_Current=1,1000,0
+
+CPDLC_PDC_Auto=1
 CPDLC_PDC_PlaySound=1
-CPDLC_PlaySound=1
-CPDLC_Transfer=1
 
 APW=1
 APW_VFR=1
@@ -149,14 +149,6 @@ HTTP_GRIB_Longitude_Min=44
 HTTP_NAT_Tracks_URL=https://www.notams.faa.gov/common/nat.html
 
 Shortcut_RadarMenu_Combo=0x12
-
-CPDLC_Default = 1
-CPDLC_MinLevel=285
-CPDLC_Transfer=1
-CPDLC_CFL=1
-CPDLC_DCT=1
-CPDLC_AHDG=1
-CPDLC_ASP=1
 
 RDF_Mode=0
 
