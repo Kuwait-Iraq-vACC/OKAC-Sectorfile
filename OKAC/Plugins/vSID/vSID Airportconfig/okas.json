@@ -4,7 +4,7 @@
         "runways": "30L,12R,30R,12L",
         "transAlt": 13000,
         "maxInitialClimb": 4000,
-        "appSI": "KAF, BKA, KR",
+        "appSI": "KKA, K",
         "enableRVSids": false,
         "sids": {
             "ROSKE3": {
