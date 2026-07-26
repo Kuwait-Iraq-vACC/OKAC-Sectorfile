@@ -1,4 +1,4 @@
-MAP:Taxi Lines
+MAP:Taxiway Lines
 AIRPORT:OKKK
 FOLDER:Airport Layout
 ACTIVE:1
