@@ -1,0 +1,59 @@
+name: GRplugin Shared Files Compiler
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.data/GRplugin Shared/**'
+      - '.data/DataFiles/**'
+      - '.github/workflows/Concatenate-GRplugin-Shared.yml'
+      - '.github/scripts/GRplugin/Concatenate-GRplugin-Shared.py'
+  pull_request:
+    paths:
+      - '.data/GRplugin Shared/**'
+      - '.data/DataFiles/**'
+      - '.github/workflows/Concatenate-GRplugin-Shared.yml'
+      - '.github/scripts/GRplugin/Concatenate-GRplugin-Shared.py'
+
+concurrency:
+  group: GRplugin-Compile
+  cancel-in-progress: true
+
+jobs:
+  compile:
+    name: Compile GRplugin Data Files
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run compiler
+        run: python .github/scripts/GRplugin/Concatenate-GRplugin-Shared.py
+
+      - name: Commit compiled files
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+          git add OKAC/Plugins/GRplugin/
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Compile GRplugin shared data files | ${{ github.event.pull_request.title || github.event.head_commit.message }}
+            Co-authored-by: ${{ github.event.pull_request.user.login || github.event.head_commit.author.name }} <${{ github.event.pull_request.user.login || github.event.head_commit.author.email }}@users.noreply.github.com>"
+            git fetch origin ${{ github.head_ref || github.ref_name }}
+            git rebase origin/${{ github.head_ref || github.ref_name }}
+            git push origin HEAD:${{ github.head_ref || github.ref_name }}
+          fi
