@@ -5,3 +5,5 @@ Buildings.txt
 Grass.txt
 Taxiway Lines.txt
 Leadin Lines.txt
+Runway Closures.txt
+Closures.txt
