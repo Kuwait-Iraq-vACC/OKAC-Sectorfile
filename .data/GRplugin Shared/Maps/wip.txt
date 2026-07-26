@@ -1,5 +1,3 @@
-
-
 MAP:Kuwait SMGCS - GEO
 FOLDER:Kuwait SMGCS
 ACTIVE:1
