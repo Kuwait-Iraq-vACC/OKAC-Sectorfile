@@ -12,7 +12,7 @@ OUTPUTS = [
 ]
 SHARED    = '.data/GRplugin Shared/'
 DATAFILES = '.data/DataFiles/'
-INDEX     = '.Index.txt'
+INDEX     = '.Index'
 
 
 def main():
@@ -75,7 +75,7 @@ def build(folder, output_name):
     then copies the result to all output directories.
 
     Ordering:
-      1. Entries listed in .Index.txt, in order (files and/or subfolders)
+      1. Entries listed in .Index, in order (files and/or subfolders)
       2. Any remaining .txt files or subfolders not already included,
          discovered alphabetically (subdirs first, then loose root files)
     """
@@ -131,38 +131,43 @@ def build_single(src, output_name):
 def get_file_list(folder_path, folder_label):
     """
     Returns an ordered list of relative file paths to compile.
-
-    If .Index.txt exists:
-      - Process all index entries first (in listed order)
-        Supports:
-          - Specific files:   SubFolder/File.txt
-          - Whole subfolders: SubFolder/
-        Files within a subfolder entry are sorted alphabetically,
-        including files in any nested subdirectories.
-      - Then append any .txt files or subdirectories not already
-        covered by the index, in alphabetical order.
-
-    If no .Index.txt:
-      - Auto-discover everything alphabetically (subdirs first,
-        then loose root .txt files).
+    Entry point into collect_txt_files, which now checks for a
+    .Index at EVERY directory level it visits, not just this
+    top-level one.
     """
-    index_path = folder_path + INDEX
+    return collect_txt_files(folder_path, prefix='')
+
+
+def collect_txt_files(folder_path, prefix=''):
+    """
+    Returns the ordered list of .txt files under folder_path.
+
+    Checked at this level:
+      If a .Index file exists here: use it (via read_index_with_remainder).
+      If not: auto-discover alphabetically (via auto_discover).
+
+    Both branches recurse back into collect_txt_files for subfolders,
+    so a .Index at ANY depth — not just the top — is honored.
+    """
+    index_path = os.path.join(folder_path, INDEX)
 
     if os.path.exists(index_path):
-        return read_index_with_remainder(index_path, folder_label, folder_path)
+        return read_index_with_remainder(folder_path, prefix, index_path)
 
-    return auto_discover(folder_path)
+    return auto_discover(folder_path, prefix=prefix)
 
 
-def read_index_with_remainder(index_path, folder_label, folder_path):
+def read_index_with_remainder(folder_path, prefix, index_path):
     """
-    Reads .Index.txt entries first, then appends any files/folders
-    not already covered, discovered alphabetically.
+    Reads this folder's .Index entries first, then appends any
+    files/folders in this same folder not already covered by it,
+    discovered alphabetically.
     """
     files = []
-    # Track which top-level names (files or folder prefixes) are already
-    # covered so we can skip them in the remainder pass.
+    # Track which top-level names (files or folder prefixes) in THIS
+    # folder are already covered so we can skip them in the remainder pass.
     covered = set()
+    label = prefix.rstrip('/') or '(root)'
 
     with open(index_path, 'r') as f:
         for raw_line in f:
@@ -171,21 +176,22 @@ def read_index_with_remainder(index_path, folder_label, folder_path):
                 continue
 
             if line.endswith('/'):
-                # Whole subfolder — discover all .txt files recursively,
-                # sorted alphabetically at each level
-                sub_path = folder_path + line
+                # Whole subfolder — recurse via collect_txt_files, so a
+                # .Index inside this subfolder is honored too; falls
+                # back to alphabetical if that subfolder has none.
+                sub_name = line.rstrip('/')
+                sub_path = os.path.join(folder_path, sub_name)
                 if not os.path.exists(sub_path):
                     print(f'[WARN] Subfolder not found: {sub_path}')
                     continue
-                sub_files = collect_txt_files(sub_path, prefix=line)
+                sub_files = collect_txt_files(sub_path, prefix=prefix + sub_name + '/')
                 files.extend(sub_files)
-                # Mark the top-level subfolder name as covered
-                covered.add(line.rstrip('/'))
-                print(f'[INFO] {line} expanded to {len(sub_files)} file(s) (recursive)')
+                covered.add(sub_name)
+                print(f'[INFO] {prefix}{line} expanded to {len(sub_files)} file(s)')
 
             elif '.' in line:
                 # Specific file
-                files.append(line)
+                files.append(prefix + line)
                 # Mark the top-level component as covered (could be
                 # "SubFolder/file.txt" → covers "SubFolder" prefix, or
                 # a loose "file.txt" at the root)
@@ -195,55 +201,27 @@ def read_index_with_remainder(index_path, folder_label, folder_path):
             else:
                 print(f'[WARN] Skipped index entry (no extension or /): "{line}" in {index_path}')
 
-    print(f'[INFO] {folder_label} index supplied {len(files)} entry/entries')
+    print(f'[INFO] {label} index supplied {len(files)} entry/entries')
 
     # ----------------------------------------------------------
-    # Remainder pass: pick up anything not already covered
+    # Remainder pass: pick up anything in THIS folder not already
+    # covered by its own .Index
     # ----------------------------------------------------------
-    remainder = collect_remainder(folder_path, covered)
+    remainder = collect_remainder(folder_path, covered, prefix)
     if remainder:
-        print(f'[INFO] {folder_label} appending {len(remainder)} unlisted file(s) alphabetically')
+        print(f'[INFO] {label} appending {len(remainder)} unlisted file(s) alphabetically')
         files.extend(remainder)
 
-    print(f'[INFO] {folder_label} total: {len(files)} file(s)')
+    print(f'[INFO] {label} total: {len(files)} file(s)')
     return files
 
 
-def collect_txt_files(folder_path, prefix=''):
+def collect_remainder(folder_path, covered, prefix=''):
     """
-    Recursively collects all .txt files under folder_path,
-    sorted alphabetically at each directory level.
-    Returns paths relative to the parent of folder_path,
-    prefixed with `prefix`.
-
-    Order: subdirectories (depth-first, sorted) then loose files (sorted).
-    """
-    files = []
-
-    try:
-        entries = sorted(os.scandir(folder_path), key=lambda e: e.name)
-    except FileNotFoundError:
-        print(f'[WARN] Folder not found: {folder_path}')
-        return files
-
-    # Subdirs first (depth-first)
-    for entry in entries:
-        if entry.is_dir() and not entry.name.startswith('.'):
-            sub_prefix = prefix + entry.name + '/'
-            files.extend(collect_txt_files(entry.path, prefix=sub_prefix))
-
-    # Then loose .txt files (skip dotfiles like .Index.txt)
-    for entry in entries:
-        if entry.is_file() and entry.name.endswith('.txt') and not entry.name.startswith('.'):
-            files.append(prefix + entry.name)
-
-    return files
-
-
-def collect_remainder(folder_path, covered):
-    """
-    Returns all .txt files (recursively) under folder_path that are NOT
-    already covered by the index, in alphabetical order.
+    Returns .txt files/subfolders directly in folder_path that are NOT
+    already covered by that folder's own .Index, in alphabetical order.
+    Subfolders picked up here still recurse through collect_txt_files,
+    so their own nested .Index (if any) is honored.
 
     A path is considered covered if its top-level component (file or
     folder name) appears in the `covered` set.
@@ -259,26 +237,44 @@ def collect_remainder(folder_path, covered):
     for entry in entries:
         if entry.is_dir() and not entry.name.startswith('.'):
             if entry.name not in covered:
-                sub_files = collect_txt_files(entry.path, prefix=entry.name + '/')
+                sub_files = collect_txt_files(entry.path, prefix=prefix + entry.name + '/')
                 files.extend(sub_files)
 
-    # Loose root .txt files not covered (skip dotfiles like .Index.txt)
+    # Loose .txt files not covered (skip dotfiles like .Index)
     for entry in entries:
         if entry.is_file() and entry.name.endswith('.txt') and not entry.name.startswith('.'):
             if entry.name not in covered:
-                files.append(entry.name)
+                files.append(prefix + entry.name)
 
     return files
 
 
-def auto_discover(folder_path):
+def auto_discover(folder_path, prefix=''):
     """
-    Walks the folder structure when no .Index.txt exists:
-      - Subdirectories first, sorted alphabetically (recursed)
-      - .txt files within each level, sorted alphabetically
-      - Then any loose .txt files at the root, sorted alphabetically
+    Walks this folder alphabetically when it has no .Index of its own:
+      - Subdirectories first, sorted alphabetically — each one recurses
+        through collect_txt_files, so a .Index inside IT is still honored.
+      - Then loose .txt files in this folder, sorted alphabetically.
     """
-    return collect_txt_files(folder_path, prefix='')
+    files = []
+
+    try:
+        entries = sorted(os.scandir(folder_path), key=lambda e: e.name)
+    except FileNotFoundError:
+        print(f'[WARN] Folder not found: {folder_path}')
+        return files
+
+    # Subdirs first (depth-first)
+    for entry in entries:
+        if entry.is_dir() and not entry.name.startswith('.'):
+            files.extend(collect_txt_files(entry.path, prefix=prefix + entry.name + '/'))
+
+    # Then loose .txt files (skip dotfiles like .Index)
+    for entry in entries:
+        if entry.is_file() and entry.name.endswith('.txt') and not entry.name.startswith('.'):
+            files.append(prefix + entry.name)
+
+    return files
 
 
 # ============================================================

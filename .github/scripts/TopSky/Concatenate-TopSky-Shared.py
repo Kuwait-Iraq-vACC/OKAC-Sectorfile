@@ -11,7 +11,7 @@ OUTPUTS = [
     # 'OKAC/Plugins/TopSky2/',  # Add more output paths here
 ]
 SHARED = '.data/TopSky Shared/'
-INDEX  = '.Index.txt'
+INDEX  = '.Index'
 
 
 def main():
