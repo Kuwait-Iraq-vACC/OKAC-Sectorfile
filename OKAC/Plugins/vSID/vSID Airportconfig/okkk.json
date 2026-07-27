@@ -3,7 +3,7 @@
         "elevation": 204,
         "runways": "33L,33R,15L,15R,16,34",
         "transAlt": 13000,
-        "maxInitialClimb": 4000,
+        "maxInitialClimb": 15000,
         "intersections": {"15R": "W15, W18, M15, M14, W5, W4", "33L": "W1, W2", "15L": "LP1, LP2", "33R": "LP1, LP2, E2", "16": "V8, V9, V10", "34": "V1, V2, V3"},
         "appSI": "KKA, K",
         "enableRVSids": false,
@@ -12,28 +12,28 @@
                 "F": {
 					"1": {
 						"rwy": "33L",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "I": {
 					"2": {
 						"rwy": "34",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "E": {
 					"3": {
 						"rwy": "15R",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "K": {
 					"4": {
 						"rwy": "16",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 }
@@ -42,28 +42,28 @@
                 "F": {
 					"1": {
 						"rwy": "33L",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "I": {
 					"2": {
 						"rwy": "34",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "E": {
 					"3": {
 						"rwy": "15R",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "K": {
 					"4": {
 						"rwy": "16",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 }
@@ -72,28 +72,28 @@
                 "F": {
 					"1": {
 						"rwy": "33L",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "I": {
 					"2": {
 						"rwy": "34",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "E": {
 					"3": {
 						"rwy": "15R",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "K": {
 					"4": {
 						"rwy": "16",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 }
@@ -102,28 +102,28 @@
                 "J": {
 					"1": {
 						"rwy": "33L",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "I": {
 					"2": {
 						"rwy": "34",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "L": {
 					"3": {
 						"rwy": "15R",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "K": {
 					"4": {
 						"rwy": "16",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 }
@@ -132,28 +132,28 @@
                 "J": {
 					"1": {
 						"rwy": "33L",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "I": {
 					"2": {
 						"rwy": "34",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "L": {
 					"3": {
 						"rwy": "15R",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "K": {
 					"4": {
 						"rwy": "16",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 }
@@ -162,28 +162,28 @@
                 "J": {
 					"1": {
 						"rwy": "33L",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "I": {
 					"2": {
 						"rwy": "34",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "L": {
 					"3": {
 						"rwy": "15R",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "K": {
 					"4": {
 						"rwy": "16",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 }
@@ -192,14 +192,14 @@
                 "E": {
 					"1": {
 						"rwy": "15R",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "K": {
 					"2": {
 						"rwy": "16",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 }
@@ -208,28 +208,28 @@
                 "F": {
 					"1": {
 						"rwy": "33L",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "I": {
 					"2": {
 						"rwy": "34",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "E": {
 					"3": {
 						"rwy": "15R",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "K": {
 					"4": {
 						"rwy": "16",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 }
@@ -238,14 +238,14 @@
                 "F": {
 					"1": {
 						"rwy": "33L",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 },
                 "I": {
 					"2": {
 						"rwy": "34",
-						"initial": 4000,
+						"initial": 15000,
 						"prio": 1
 					}
                 }
