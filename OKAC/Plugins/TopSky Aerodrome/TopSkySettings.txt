@@ -101,6 +101,11 @@ Window_CPDLC_Current=1,1000,0
 CPDLC_PDC_Auto=1
 CPDLC_PDC_PlaySound=1
 
+Window_PDC_SetASSR=1
+Window_PDC_SetCFL=1
+Window_DCL_SetASSR=1
+Window_DCL_SetCFL=1
+
 APW=1
 APW_VFR=1
 APW_UseCFL=1
