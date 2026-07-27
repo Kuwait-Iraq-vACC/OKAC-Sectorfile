@@ -6,7 +6,7 @@
         "maxInitialClimb": 15000,
         "intersections": {"15R": "W15, W18, M15, M14, W5, W4", "33L": "W1, W2", "15L": "LP1, LP2", "33R": "LP1, LP2, E2", "16": "V8, V9, V10", "34": "V1, V2, V3"},
         "appSI": "KKA, K",
-        "enableRVSids": false,
+        "enableRVSids": true,
         "sids": {
             "ALVAX": {
                 "F": {
