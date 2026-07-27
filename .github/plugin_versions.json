@@ -1,4 +1,11 @@
 {
+  "AMAN": {
+    "schemaVersion": 1,
+    "label": "AMAN",
+    "message": "0.8.0",
+    "color": "blue",
+    "repo": "Kuwait-Iraq-vACC/AMAN"
+  },
   "CDM": {
     "schemaVersion": 1,
     "label": "CDM",
