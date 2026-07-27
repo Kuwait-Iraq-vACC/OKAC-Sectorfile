@@ -12,7 +12,7 @@ OUTPUTS = [
 ]
 SHARED    = '.data/GRplugin Shared/'
 DATAFILES = '.data/DataFiles/'
-INDEX     = '.Index.txt'
+INDEX     = '.Index'
 
 
 def main():
