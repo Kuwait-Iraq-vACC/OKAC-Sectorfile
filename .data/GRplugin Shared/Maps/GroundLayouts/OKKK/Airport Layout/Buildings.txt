@@ -1,4 +1,4 @@
-MAP:Buildlings
+MAP:Buildings
 AIRPORT:OKKK
 FOLDER:Airport Layout
 ACTIVE:1
