@@ -1,5 +1,5 @@
 [DCL]
-DCL:OKKK:SID:CLRD TO <ades> OFF <drwy> VIA <sid> INIT CLB <cfl> SQUAWK <assr> NEXT FREQ <freq_own> <rmk>
+DCL:OKKK:SID:<callsign> CLRD TO <ades> OFF <drwy> VIA <sid><cr/lf>SQUAWK <assr> <atis<cr/lf>EOBT <eobt><cr/lf>ALT <cfl><cr/lf><rmk>
 
 [FREETEXT]
 FREETEXT:UNICOM:SERVICE TERMINATED. MONITOR 122.800
