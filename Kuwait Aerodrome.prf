@@ -69,8 +69,8 @@ Plugins	Plugin8Display2	Standard ES radar screen
 Plugins	Plugin9	\OKAC\Plugins\VATCAN Plugin\VATCANBookings.dll
 Plugins	Plugin9Display0	Ground Radar display
 Plugins	Plugin9Display1	Standard ES radar screen
-ASRFastKeys	1	\OKAC\ASR\Kuwait SMGCS.asr
-ASRFastKeys	2	\OKAC\ASR\Kuwait Tower - Dynamic.asr
+ASRFastKeys	1	\OKAC\ASR\Kuwait Tower - Dynamic.asr
+ASRFastKeys	2	\OKAC\ASR\Kuwait SMGCS.asr
 RecentFiles	Recent1	\OKAC\ASR\Kuwait Tower - Dynamic.asr
 RecentFiles	Recent2	\OKAC\ASR\Kuwait SMGCS.asr
-LastSession	proxyserver	AUTOMATIC
+LastSession	server	AUTOMATIC
