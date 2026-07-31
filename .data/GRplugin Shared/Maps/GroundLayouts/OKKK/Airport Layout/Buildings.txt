@@ -2,6 +2,7 @@ MAP:Buildings
 AIRPORT:OKKK
 FOLDER:Airport Layout
 ACTIVE:1
+LAYER:4
 COLOR:SMGCS_BUILDINGS
 
 // Flight Training Centre
