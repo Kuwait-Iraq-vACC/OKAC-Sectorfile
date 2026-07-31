@@ -2,7 +2,7 @@ MAP:Runway Markings
 AIRPORT:OKKK
 FOLDER:Information
 ACTIVE:1
-LAYER:4
+LAYER:5
 COLOR:SMGCS_RUNWAYMARKINGS
 
 // RWY15L Threshold Markings
