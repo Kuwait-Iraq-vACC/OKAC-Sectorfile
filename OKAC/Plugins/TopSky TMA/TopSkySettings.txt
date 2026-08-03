@@ -153,11 +153,8 @@ HTTP_GRIB_Latitude_Max=33
 HTTP_GRIB_Latitude_Min=26
 HTTP_GRIB_Longitude_Max=53
 HTTP_GRIB_Longitude_Min=44
-HTTP_NAT_Tracks_URL=https://www.notams.faa.gov/common/nat.html
 
 Shortcut_RadarMenu_Combo=0x12
-
-RDF_Mode=0
 
 Equip_ModeS=PISXEHL
 Equip_UseCodes=2
