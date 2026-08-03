@@ -55,7 +55,7 @@ Plugins	Plugin2Display1	SMR radar display
 Plugins	Plugin2Display2	Ground Radar display
 Plugins	Plugin3	\OKAC\Plugins\GRplugin\GRplugin.dll
 Plugins	Plugin3Display0	Ground Radar display
-Plugins	Plugin4	\OKAC\Plugins\VATCAN Plugin\VATCANBookings.dll
+Plugins	Plugin9	\OKAC\Plugins\VATCAN Bookings\VATCANBookings.dll
 Plugins	Plugin4Display0	Ground Radar display
 Plugins	Plugin4Display1	Ground Radar display
 Plugins	Plugin4Display2	Standard ES radar screen
