@@ -6,7 +6,7 @@ Setup_AutoSignIn=1
 Areas_NOTAM_Activation=1
 Airspace_ASSR_Type=2
 
-RDF_Mode=2
+RDF_Mode=-1
 RDF_Floor=0
 
 AIW=1
