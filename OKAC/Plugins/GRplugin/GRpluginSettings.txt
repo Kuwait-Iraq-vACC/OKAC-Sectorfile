@@ -1,4 +1,6 @@
+// ============================================================
 // General Settings
+// ============================================================
 
 Maps_URL=https://raw.githubusercontent.com/Kuwait-Iraq-vACC/OKAC-Sectorfile/refs/heads/main/OKAC/Plugins/GRplugin/GRpluginMaps.txt
 System_GlobalMenu_FontSize=15
@@ -15,11 +17,28 @@ System_GroundMode_AltFilter_AAL=5000
 System_TowerMode_AltFilter_High=10000
 System_TowerMode_AltFilter_Low=300
 
+System_RMCA_RWY_Closure=50
+System_RMCA_RWY_Closure_Info=20
+System_RMCA_RWY_Closure_LVP=40
+System_RMCA_RWY_Closure_LVP_Info=20
+System_RMCA_APP_Time=20
+System_RMCA_APP_Time_Info=35
+System_RMCA_APP_Time_LVP=30
+System_RMCA_APP_Time_LVP_Info=50
+System_RMCA_NoLineUpState=0
+System_AutoAssignDist=100
+System_RIM=0
+
+// ============================================================
 // Filters
+// ============================================================
+
 GroundLabel_Filter_NoState=1
 GroundLabel_Filter_Parked=1
 
+// ============================================================
 // States
+// ============================================================
 
 System_State_OnFreq=FREQ
 System_State_DeIce=DEICE
@@ -31,7 +50,10 @@ System_State_LineUp=L/U
 System_State_Depa=T/O
 System_State_Parked=PRK
 
+// ============================================================
 // Colours
+// ============================================================
+
 Color_Arrival=253,236,166
 Color_Departure=166,253,190
 Color_RawVideo=255,255,0
@@ -46,8 +68,9 @@ GroundLabel_Transparency_Bg=80
 Color_Information=0,181,27
 Color_InformationText=220,220,220
 Color_Warning=255,64,64
-Color_APP_Background=0,0,0
+
 Color_APP_Runway=255,255,255
+Color_APP_Background=10,10,12
 Color_TSW_Background=0,0,0
 
 Color_WTitleBar=160,160,160
@@ -60,17 +83,19 @@ Color_WForeground=250,250,250
 Color_WForeground2=255,255,255
 Color_WForeground3=255,255,255
 Color_Text_Notes=255,255,255
-Color_WRW_Runway=45,45,45
+
 Color_WRW_Background=45,45,45
 Color_WRW_Runway=70,70,70
 
+// ============================================================
 // Lists
+// ============================================================
 
-List_Alerts=1
+List_Alerts=1,20,750
+
 List_Outbound_TYPE=1
 List_Outbound_WTC=1
 List_Outbound_SID=1
-
 List_Inbound=*,2
 List_Outbound=*,2
 
@@ -80,27 +105,47 @@ List_Arrival_TYPE=1
 List_Arrival_STAND=1
 List_Arrival_ETA=0
 List_Stand_Items=10
-List_Alerts=1,20,750
 
+List_Departure_TYPE=1
+List_Departure_RWY=1
+List_Departure_STAND=1
+List_Departure_EOBT=1
+List_Departure_Items=30
+
+// ============================================================
 // Window
+// ============================================================
 
-Window_APP_Scale=11
-Window_APP_AltFilter=6000
-Window_APP_Extensions=20
+Window_APP_DefPos=1400,500
+Window_APP_DefSize=400,400
+Window_APP_AltFilter=15000
+Window_APP_Extensions=0
+Window_APP_Draw_Runways=0
 
+Window_TSW_DefPos=1400,100
+Window_TSW_DefSize=400,400
+Window_TSW_Scale=200
+
+Window_Maps_Items=50
+Window_Maps_Sorting=1
+
+Window_APW_DefPos=1350,45
+
+// ============================================================
 // Labels
+// ============================================================
 
 GroundLabel=1
 
-Label=GND:ARR:0:ALRT,0,0:COMM,0,1
-Label=GND:ARR:1:CALLSIGN,0,0:STAND,0,1
+Label=GND:ARR:0:ALRT,0,0:COMM,0,1 
+Label=GND:ARR:1:CALLSIGN,0,0:STAND,0,1 
 Label=GND:ARR:2:ATYP,0,0:WTC,0,1,0
-Label=GND:ARR:3:RMK,0,1
+Label=GND:ARR:3:RMK,0,1 
 
-Label=GND:DEP:0:ALRT,0,0:ASSR_E,0,1:COMM,0,1
-Label=GND:DEP:1:CALLSIGN,0,0:DRWY,0,1,1
+Label=GND:DEP:0:ALRT,0,0:ASSR_E,0,1:COMM,0,1 
+Label=GND:DEP:1:CALLSIGN,0,0:DRWY,0,1,1 
 Label=GND:DEP:2:ATYP,0,0:WTC,0,1,0
-Label=GND:DEP:3:DEP,0,0:RMK,0,1
+Label=GND:DEP:3:DEP,0,0:RMK,0,1 
 
 Label=GND:OTH:0:ALRT,0,0:COMM,0,0
 Label=GND:OTH:1:CALLSIGN,0,0
@@ -112,12 +157,12 @@ Label=GND:UNC:1:TSSR,0,0
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
-Label=TWR:ARR:0:ALRT,0,0:COMM,0,1
+Label=TWR:ARR:0:ALRT,0,0:COMM,0,1 
 Label=TWR:ARR:1:CALLSIGN,0,0:ATYP,0,1
 Label=TWR:ARR:2:AFL+VS,0,1,20:GS,0,1
-Label=TWR:ARR:3:ARWY,0,0:RMK,0,1
+Label=TWR:ARR:3:ARWY,0,0:RMK,0,1 
 
-Label=TWR:DEP:0:ALRT,0,0:COMM,0,1
+Label=TWR:DEP:0:ALRT,0,0:COMM,0,1 
 Label=TWR:DEP:1:CALLSIGN,0,0:ATYP,0,1
 Label=TWR:DEP:2:AFL+VS,0,1,20:GS,0,1
 Label=TWR:DEP:3:DEP,0,0:RMK,0,1
@@ -151,42 +196,18 @@ Label_RMK=0,1,1
 Label_STAND=0,1,0
 Label_GS=1,0,1
 
-Window_APP_DefPos=1400,500
-Window_APP_DefSize=400,400
-Window_APP_AltFilter=15000
-Window_APP_Extensions=0
-Window_APP_Scale=17
-Window_APP_Draw_Runways=0
-Window_TSW_DefPos=1400,100
-Window_TSW_DefSize=400,400
-Window_TSW_Scale=200
-Window_Maps_Items=50
-Window_Maps_Sorting=1
-
-
-System_RMCA_RWY_Closure=50
-System_RMCA_RWY_Closure_Info=20
-System_RMCA_RWY_Closure_LVP=40
-System_RMCA_RWY_Closure_LVP_Info=20
-System_RMCA_APP_Time=20
-System_RMCA_APP_Time_Info=35
-System_RMCA_APP_Time_LVP=30
-System_RMCA_APP_Time_LVP_Info=50
-System_RMCA_NoLineUpState=0
-System_AutoAssignDist=100
-
-
-List_Departure_TYPE=1
-List_Departure_Items=40
-List_Departure_RWY=1
-List_Departure_TYPE=1
-List_Departure_STAND=1
-List_Departure_EOBT=1
-List_Departure_Items=30
-Window_APW_DefPos=1350,45
-
-
 [OKKK]
+
+Airport_Elevation=204
+Airport_Radius=2.4
+Airport_Dep_Transfer_Height=1000
+Airport_Dep_Transfer_Dist=2
+
+System_CMAC_HighSpeed=40
+System_CMAC_HighSpeed_Info=25
+System_CMAC_NoContact_Distance_Info=3.0
+
+// --- Runway Areas ---
 
 Airport_Runway_Area=15L:N029.14.28.711:E047.59.00.915:N029.12.45.653:E047.59.55.636:N029.12.45.052:E047.59.54.150:N029.14.28.110:E047.58.59.429
 Airport_Runway_Area=15R:N029.14.26.167:E047.57.42.205:N029.12.45.980:E047.58.35.407:N029.12.45.381:E047.58.33.927:N029.14.25.542:E047.57.40.671
@@ -196,6 +217,7 @@ Airport_Runway_Area_LVP=15L:N029.14.28.711:E047.59.00.915:N029.12.45.653:E047.59
 Airport_Runway_Area_LVP=15R:N029.14.26.167:E047.57.42.205:N029.12.45.980:E047.58.35.407:N029.12.45.381:E047.58.33.927:N029.14.25.542:E047.57.40.671
 Airport_Runway_Area_LVP=16:N029.13.42.294:E047.56.31.815:N029.11.27.477:E047.57.43.487:N029.11.26.665:E047.57.41.482:N029.13.41.487:E047.56.29.825
 
+// --- Runway Buffers ---
 
 Airport_Runway_Buffer=16:N029.11.21.510:E047.57.39.343:N029.11.25.017:E047.57.48.058:N029.11.31.843:E047.57.44.429:N029.11.54.120:E047.57.32.596:N029.11.54.887:E047.57.32.189:N029.12.17.376:E047.57.22.896:N029.12.18.058:E047.57.23.440:N029.12.19.863:E047.57.22.213:N029.12.20.738:E047.57.21.254:N029.12.26.622:E047.57.18.135:N029.12.27.838:E047.57.17.983:N029.12.29.810:E047.57.17.195:N029.12.29.878:E047.57.16.243:N029.12.43.856:E047.57.08.815:N029.12.44.544:E047.57.09.360:N029.12.46.344:E047.57.08.140:N029.12.47.227:E047.57.07.176:N029.12.53.112:E047.57.04.051:N029.12.54.327:E047.57.03.899:N029.12.56.300:E047.57.03.112:N029.12.56.371:E047.57.02.164:N029.12.55.664:E047.56.59.892:N029.13.46.891:E047.56.32.642:N029.13.43.362:E047.56.23.881
 Airport_Runway_Buffer_LVP=16:N029.11.21.510:E047.57.39.343:N029.11.25.017:E047.57.48.058:N029.11.26.078:E047.57.50.654:N029.11.28.706:E047.57.49.243:N029.11.29.713:E047.57.48.717:N029.11.29.763:E047.57.48.622:N029.11.32.173:E047.57.47.402:N029.11.33.242:E047.57.46.837:N029.11.33.294:E047.57.46.745:N029.11.54.758:E047.57.35.301:N029.11.54.936:E047.57.35.311:N029.11.56.207:E047.57.34.632:N029.11.56.307:E047.57.34.477:N029.12.17.376:E047.57.22.896:N029.12.18.058:E047.57.23.440:N029.12.19.863:E047.57.22.213:N029.12.20.738:E047.57.21.254:N029.12.26.622:E047.57.18.135:N029.12.27.838:E047.57.17.983:N029.12.29.810:E047.57.17.195:N029.12.29.878:E047.57.16.243:N029.12.43.856:E047.57.08.815:N029.12.44.544:E047.57.09.360:N029.12.46.344:E047.57.08.140:N029.12.47.227:E047.57.07.176:N029.12.53.112:E047.57.04.051:N029.12.54.327:E047.57.03.899:N029.12.56.300:E047.57.03.112:N029.12.56.371:E047.57.02.164:N029.13.17.713:E047.56.51.212:N029.13.17.882:E047.56.51.218:N029.13.19.149:E047.56.50.538:N029.13.19.252:E047.56.50.386:N029.13.40.757:E047.56.38.955:N029.13.40.927:E047.56.38.962:N029.13.42.199:E047.56.38.287:N029.13.42.308:E047.56.38.115:N029.13.44.280:E047.56.37.117:N029.13.44.388:E047.56.37.119:N029.13.45.455:E047.56.36.553:N029.13.48.003:E047.56.35.282:N029.13.43.362:E047.56.23.881
@@ -203,13 +225,7 @@ Airport_Runway_Buffer_LVP=16:N029.11.21.510:E047.57.39.343:N029.11.25.017:E047.5
 Airport_Runway_Buffer=15R:N029.14.28.270:E047.57.41.703:N029.14.26.326:E047.57.36.822:N029.14.22.738:E047.57.38.765:N029.14.21.967:E047.57.39.172:N029.13.49.739:E047.57.56.302:N029.13.48.971:E047.57.56.715:N029.12.42.384:E047.58.32.225:N029.12.44.473:E047.58.37.326:N029.12.43.997:E047.58.38.109:N029.12.43.690:E047.58.38.633:N029.12.43.556:E047.58.39.017:N029.12.43.472:E047.58.39.403:N029.12.43.469:E047.58.39.818:N029.12.44.006:E047.58.39.805:N029.12.45.105:E047.58.39.779:N029.13.09.358:E047.58.26.129:N029.13.10.281:E047.58.26.507:N029.13.51.648:E047.58.03.382:N029.13.52.515:E047.58.02.914:N029.14.01.891:E047.57.58.693:N029.14.02.156:E047.57.57.873:N029.14.25.945:E047.57.45.942:N029.14.26.826:E047.57.45.479:N029.14.29.324:E047.57.44.142
 Airport_Runway_Buffer_LVP=15R:N029.14.28.270:E047.57.41.703:N029.14.26.326:E047.57.36.822:N029.14.25.286:E047.57.34.371:N029.14.22.107:E047.57.36.053:N029.14.21.939:E047.57.36.041:N029.14.20.661:E047.57.36.721:N029.14.20.567:E047.57.36.868:N029.13.49.096:E047.57.53.601:N029.13.48.928:E047.57.53.589:N029.13.47.664:E047.57.54.262:N029.13.47.560:E047.57.54.425:N029.12.41.474:E047.58.29.978:N029.12.42.384:E047.58.32.225:N029.12.44.473:E047.58.37.326:N029.12.43.997:E047.58.38.109:N029.12.43.690:E047.58.38.633:N029.12.43.556:E047.58.39.017:N029.12.43.472:E047.58.39.403:N029.12.43.469:E047.58.39.818:N029.12.44.006:E047.58.39.805:N029.12.45.105:E047.58.39.779:N029.13.09.358:E047.58.26.129:N029.13.10.281:E047.58.26.507:N029.13.51.648:E047.58.03.382:N029.13.52.515:E047.58.02.914:N029.14.01.891:E047.57.58.693:N029.14.02.156:E047.57.57.873:N029.14.25.945:E047.57.45.942:N029.14.26.826:E047.57.45.479:N029.14.29.324:E047.57.44.142
 
-
-Airport_Elevation=204
-Airport_Radius=2.4
-
-System_CMAC_HighSpeed_Info=25
-System_CMAC_HighSpeed=40
-System_CMAC_NoContact_Distance_Info=3.0
+// --- Approach Paths ---
 
 AppPath=OKKK:33L:N029.12.46.477:E047.58.34.076:332:L:206:3.0
 AppPath=OKKK:33R:N029.12.46.093:E047.59.54.570:332:L:206:3.0
@@ -218,25 +234,24 @@ AppPath=OKKK:15R:N029.14.27.884:E047.59.00.519:152:R:206:3.0
 AppPath=OKKK:34:N029.11.27.082:E047.57.42.509:331:L:206:3.0
 AppPath=OKKK:16:N029.13.41.902:E047.56.30.851:151:R:206:3.0
 
-Color_APP_Background=10,10,12
-Window_APP=1,1,2154,2011,450,450
-Window_APP_Scale=1,16
-Window_APP_CenterPos=1,29.222080236,47.970243645
+// --- APP Window ---
 
+Window_APP=1,1,2154,2011,450,450
+Window_APP_AltFilter=1,5000
+Window_APP_CenterPos=1,29.222080236,47.970243645
 Window_APP_Rotation=295
-Window_APP_AltFilter=15000
-Window_APW=15R,2/15R
-Window_APW=15L,2/15L
-Window_APW=33R,2/33R
-Window_APW=33L,2/33L
-Window_APW=34,2/34
-Window_APW=16,2/16
-Window_APP_Scale=40
-Window_WindRose=15R,2
-Window_WindRose=15L,2
-Window_WindRose=33R,2
-Window_WindRose=33L,2
-Window_WindRose=34,2
-Window_WindRose=16,2
-Airport_Dep_Transfer_Height=1000
-Airport_Dep_Transfer_Dist=2
+Window_APP_Scale=1,16,384
+
+Window_APW=15R,0/15R
+Window_APW=15L,0/15L
+Window_APW=33R,0/33R
+Window_APW=33L,0/33L
+Window_APW=34,0/34
+Window_APW=16,0/16
+
+Window_WindRose=15R,0
+Window_WindRose=15L,0
+Window_WindRose=33R,0
+Window_WindRose=33L,0
+Window_WindRose=34,0
+Window_WindRose=16,0
