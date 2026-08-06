@@ -62,8 +62,8 @@ Plugins	Plugin6	\OKAC\Plugins\VFPC\VFPC.dll
 Plugins	Plugin7	\OKAC\Plugins\Virtual Controller Helper\VCH.dll
 ASRFastKeys	1	\OKAC\ASR\Kuwait FIR.asr
 ASRFastKeys	2	\OKAC\ASR\Kuwait SMGCS.asr
-RecentFiles	Recent1	\OKAC\ASR\Kuwait SMGCS.asr
-RecentFiles	Recent2	\OKAC\ASR\Kuwait FIR.asr
+RecentFiles	Recent1	\OKAC\ASR\Kuwait FIR.asr
+RecentFiles	Recent2	\OKAC\ASR\Kuwait SMGCS.asr
 LastSession	server	AUTOMATIC
 Plugins	Plugin8	\OKAC\Plugins\VATCAN Bookings\VATCANBookings.dll
 Plugins	Plugin9	\OKAC\Plugins\AMAN\Aman.dll
