@@ -7,6 +7,8 @@ Window_SM_LowestLevel=30
 CPDLC_Default=1
 Window_CARD=1,1563,776
 Window_CPDLC_Current=1,0,585
+Window_MsgIn=1,1630,50
+Window_MsgOut=1,1630,100
 System_FPASD=1
 
 [OKAC_CTR]
@@ -28,9 +30,6 @@ STCA_CurrProx_Sep_Lat_L=7.75
 [_APP]
 Window_CARD=1,1563,776
 System_FPASD=1
-Label_Ass_GS=1
-Label_Red_GS=1
-Label_No_GS=1
 MTCD=0
 
 [OKKK_APP]

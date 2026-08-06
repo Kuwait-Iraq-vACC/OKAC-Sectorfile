@@ -30,10 +30,6 @@ STCA_CurrProx_Sep_Lat_L=7.75
 [_APP]
 Window_CARD=1,1563,776
 System_FPASD=1
-Label_Co_GS=1
-Label_Ass_GS=1
-Label_Red_GS=1
-Label_No_GS=1
 MTCD=0
 
 [OKKK_APP]
