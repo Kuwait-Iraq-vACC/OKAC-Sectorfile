@@ -96,8 +96,6 @@ List_Alerts=1,20,750
 List_Outbound_TYPE=1
 List_Outbound_WTC=1
 List_Outbound_SID=1
-List_Inbound=*,2
-List_Outbound=*,2
 
 List_Arrival_MaxTime=25
 List_Arrival_Items=10
@@ -255,3 +253,7 @@ Window_WindRose=33R,0
 Window_WindRose=33L,0
 Window_WindRose=34,0
 Window_WindRose=16,0
+
+// --- Lists ---
+List_Inbound=*,2
+List_Outbound=*,2
