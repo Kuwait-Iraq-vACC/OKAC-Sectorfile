@@ -83,7 +83,7 @@ m_MessageInfoLevel:1
 m_MessageWarningLevel:2
 m_MessageErrorLevel:4
 m_PointOutLevel:3
-m_HandoffRequestLevel:1
+m_HandoffRequestLevel:0
 m_CoordinationRequestLevel:4
 m_HandoffAcceptLevel:1
 m_HandoffRefuseLevel:3
