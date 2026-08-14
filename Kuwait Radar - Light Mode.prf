@@ -18,7 +18,7 @@ Settings	SettingsfileSIL	\OKAC\Settings\Lists - ACC.txt
 Settings	SettingsfileSYMBOLOGY	\OKAC\Settings\SymbologyLM.txt
 Settings	SettingsfileTAGS	\OKAC\Settings\Tags.txt
 Settings	SettingsfileVCCS	\OKAC\Settings\VCCS.txt
-Settings	SettingsfileVOICE	\OKAC\Settings\VoiceChannels.txt
+Settings	SettingsfileVOICE	\OKAC\Settings\Voice\Radar Voice.txt
 Settings	SettingsfilePILOTING	\OKAC\Settings\Lists - ACC.txt
 Settings	SettingsfileORIGPLANE	\OKAC\Settings\Lists - ACC.txt
 Settings	SettingsfileSTUP	\OKAC\Settings\Lists - ACC.txt
