@@ -1,0 +1,10 @@
+VOICE
+AG:OKAC (Kuwait Radar):125.300
+AG:OKAC U (Kuwait Radar):132.100
+AG:OKAJ APP (Al Jaber Control):128.300
+AG:OKKK APP (Kuwait Approach):124.800
+AG:OKKK FIN (Kuwait Director):123.825
+AG:OKKK FIN (Standby):119.625
+AG:X OKAS_ATIS:133.000
+AG:X OKKK_ATIS:126.225
+END

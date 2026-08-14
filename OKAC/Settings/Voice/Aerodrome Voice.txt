@@ -1,0 +1,7 @@
+VOICE
+AG:OKKK TWR (Kuwait Tower):118.300
+AG:OKKK GMC-E (Kuwait Ground):121.700
+AG:OKKK GMC-W (Kuwait Ground):121.850
+AG:OKKK DEL (Kuwait Delivery):126.775
+AG:X OKKK_ATIS:126.225
+END

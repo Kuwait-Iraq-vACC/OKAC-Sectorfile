@@ -1,0 +1,7 @@
+VOICE
+AG:OKAJ GND (Al Jaber Ground):127.000
+AG:OKAJ TWR (Al Jaber Tower):124.150
+AG:OKAS GND (Al Salem Ground):120.500
+AG:OKAS TWR (Al Salem Tower):118.000
+AG:X OKAS_ATIS:133.000
+END
