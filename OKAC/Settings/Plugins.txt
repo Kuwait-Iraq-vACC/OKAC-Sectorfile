@@ -92,16 +92,16 @@ TopSky plugin:ACList/Resectorisation List/m_OrderingColumn:1
 TopSky plugin:ACList/Resectorisation List/m_Column_0: Callsign:10:0:10021:6:0:1:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/Resectorisation List/m_Column_1: CFL:5:0:10002:12:99:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/Traffic Management List 1/m_Visible:1
-TopSky plugin:ACList/Traffic Management List 1/m_X:4
-TopSky plugin:ACList/Traffic Management List 1/m_Y:483
-TopSky plugin:ACList/Traffic Management List 1/m_LineNumber:1
+TopSky plugin:ACList/Traffic Management List 1/m_X:0
+TopSky plugin:ACList/Traffic Management List 1/m_Y:704
+TopSky plugin:ACList/Traffic Management List 1/m_LineNumber:15
 TopSky plugin:ACList/Traffic Management List 1/m_Resizable:1
 TopSky plugin:ACList/Traffic Management List 1/m_OrderingColumn:1
-TopSky plugin:ACList/Traffic Management List 1/m_Column_0:C/S:8:0:10021:6:99:1:TopSky plugin:TopSky plugin:TopSky plugin
+TopSky plugin:ACList/Traffic Management List 1/m_Column_0: C/S:8:0:10021:6:99:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/Traffic Management List 1/m_Column_1:ATYP:5:1:10028:2:24:1:TopSky plugin:TopSky plugin:TopSky plugin
-TopSky plugin:ACList/Traffic Management List 1/m_Column_2:WT:2:1:10083:106:106:1:TopSky plugin:TopSky plugin:TopSky plugin
+TopSky plugin:ACList/Traffic Management List 1/m_Column_2:WT:2:1:10032:106:106:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/Traffic Management List 1/m_Column_3:ETA:5:1:10033:0:0:1:TopSky plugin::
-TopSky plugin:ACList/Traffic Management List 1/m_Column_4:CFL:4:1:10002:139:16:1:TopSky plugin:TopSky plugin:TopSky plugin
+TopSky plugin:ACList/Traffic Management List 1/m_Column_4:CFL:4:1:20:139:16:1::TopSky plugin:TopSky plugin
 TopSky plugin:ACList/Traffic Management List 1/m_Column_5:HOLD:6:1:10024:65:0:1:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/Traffic Management List 1/m_Column_6:ARR:5:1:10008:1001:99:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/Traffic Management List 1/m_Column_7:STAR:7:1:10012:18:0:1:TopSky plugin::
