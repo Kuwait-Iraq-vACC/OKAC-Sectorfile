@@ -91,7 +91,7 @@ Color_WRW_Runway=70,70,70
 // Lists
 // ============================================================
 
-List_Alerts=1,20,750
+List_Alerts=1,3000,675
 
 List_Outbound_TYPE=1
 List_Outbound_WTC=1
