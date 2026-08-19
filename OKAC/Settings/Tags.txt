@@ -899,7 +899,7 @@ TAGITEM:79::0:1:1001:39:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
 TAGITEM:120::0:1:59:0:TopSky plugin:0:1:TopSky plugin::1
 TAGITEM:44::0:1:10:26:TopSky plugin:0:1:::1
 TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:1::0:1:14:15:CPegasusES:0:1:::1
+TAGITEM:25::0:1:14:15::0:1:::1
 TAGITEM:2::0:1:12:71:CPegasusES:0:1::TopSky plugin:1
 TAGITEM:3::0:1:13:134:CPegasusES:0:1::TopSky plugin:1
 TAGTYPE:3:0:0
@@ -1065,7 +1065,7 @@ TAGITEM:44::0:1:20:26:TopSky plugin:0:1:::1
 TAGITEM:140::0:0:0:0:TopSky plugin:32:1:::1
 TAGITEM:145::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:1::0:1:14:15:CPegasusES:0:1:::1
+TAGITEM:25::0:1:14:15::0:1:::1
 TAGITEM:2::0:1:12:71:CPegasusES:0:1::TopSky plugin:1
 TAGITEM:3::0:1:13:134:CPegasusES:0:1::TopSky plugin:1
 TAGITEM:248::0:0:0:0:TopSky plugin:0:1:::1
