@@ -1,0 +1,21 @@
+DisplayTypeName:Ground Radar display
+DisplayTypeNeedRadarContent:0
+DisplayTypeGeoReferenced:1
+SHOWC:1
+SHOWSB:0
+BELOW:0
+ABOVE:4000
+LEADER:5
+SHOWLEADER:0
+TURNLEADER:0
+HISTORY_DOTS:0
+SIMULATION_MODE:1
+DISABLEPANNING:0
+DISABLEZOOMING:0
+DisplayRotation:330.00000
+TAGFAMILY:
+WINDOWAREA:29.193847:47.922817:29.240498:48.019735
+PLUGIN:Ground Radar plugin:AirportElevation:472
+PLUGIN:Ground Radar plugin:AirportRadius:2.0
+PLUGIN:Ground Radar plugin:GroundMode:OKAS
+PLUGIN:TopSky plugin:ShowMapData:NONE
