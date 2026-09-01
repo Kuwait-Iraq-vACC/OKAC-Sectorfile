@@ -33,7 +33,6 @@
 	<eventPriority mode="true" />
 	<autoSetTobtFromEvSlot mode="false" />
 	<remarksOptionCtot mode="false" />
-	<disableTobtReqAfterAsrt mode="false" />
 	<PrivateMessage text="[ATFCM MSG] Your TOBT is invalid. Refile on https://vats.im/vdgs and report ready within TOBT -5. [END OF ATFCM MSG]" />
 	<loading text="...." />
 </CDM>
