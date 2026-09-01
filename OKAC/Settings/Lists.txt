@@ -155,7 +155,7 @@ m_Column:EVNT:5:1:15:129:130:1:CDM Plugin:CDM Plugin:CDM Plugin:0:0.0
 m_Column:SETBY:7:1:145:153:0:1:CDM Plugin:CDM Plugin::0:0.0
 m_Column:NET:5:1:18:137:123:1:CDM Plugin:CDM Plugin:CDM Plugin:0:0.0
 m_Column:A/C:7:0:70:24:0:1:TopSky plugin:TopSky plugin::1:0.0
-m_Column:V:2:1:10031:0:0:1:TopSky plugin:::0:0.0
+m_Column:V:2:1:10031:7:7:1:TopSky plugin:::0:0.0
 m_Column:ADES:5:1:10008:7:170:1:TopSky plugin::TopSky plugin:1:0.0
 m_Column:RWY:4:1:642:743:17:1:vSID:vSID::0:0.0
 m_Column:SID:9:1:641:741:742:1:vSID:vSID:vSID:0:0.0
