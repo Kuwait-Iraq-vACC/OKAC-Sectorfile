@@ -117,8 +117,7 @@
 .clrvec Cleared to $arr, after departure runway $1 fly heading $2, climb altitude $temp, squawk $squawk
 .read Readback correct, report ready. 
 .rbc Readback correct, report ready. 
-.pdc .msg $aircraft $dep PDC $aircraft CLRD TO $arr OFF $deprwy($dep). VIA $sid. INIT CLB $temp. SQUAWK $squawk. NEXT FREQ $com. NO READBACK REQUIRED. SET YOUR TOBT @ https://vats.im/vdgs
-
+.pdc .msg $aircraft $time $dep PDC $aircraft CLRD TO $arr OFF $deprwy($dep) VIA $sid. SQUAWK $asquawk. ALT $temp. NEXT FREQ $com. NO READBACK REQUIRED. SET YOUR TOBT @ https://vats.im/vdgs
 ;*** Pushback and Startup ***
 
 .p Push and start approved, runway $deprwy($dep)
