@@ -234,7 +234,7 @@ AppPath=OKKK:16:N029.13.41.902:E047.56.30.851:151:R:206:3.0
 
 // --- APP Window ---
 
-Window_APP=1,1,2154,2011,450,450
+Window_APP=1,1,9000,9000,450,450
 Window_APP_AltFilter=1,5000
 Window_APP_CenterPos=1,29.222080236,47.970243645
 Window_APP_Rotation=295
