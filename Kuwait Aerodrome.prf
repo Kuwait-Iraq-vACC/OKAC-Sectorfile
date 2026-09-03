@@ -40,11 +40,11 @@ Sounds	Sound16	\OKAC\Sounds\handoff_refused.wav
 Sounds	Sound17	\OKAC\Sounds\pointout.wav
 Sounds	Sound18	\OKAC\Sounds\startup.wav
 Plugins	Plugin0	\OKAC\Plugins\DiscordEuroScope\DiscordEuroscope.dll
-Plugins	Plugin1	\OKAC\Plugins\GRplugin\GRplugin.dll
+Plugins	Plugin1	\OKAC\Plugins\TopSky Aerodrome\TopSky.dll
 Plugins	Plugin1Display0	Ground Radar display
-Plugins	Plugin2	\OKAC\Plugins\TopSky Aerodrome\TopSky.dll
+Plugins	Plugin1Display1	Standard ES radar screen
+Plugins	Plugin2	\OKAC\Plugins\GRplugin\GRplugin.dll
 Plugins	Plugin2Display0	Ground Radar display
-Plugins	Plugin2Display1	Standard ES radar screen
 Plugins	Plugin3	\OKAC\Plugins\VCH\VCH.dll
 Plugins	Plugin4	\OKAC\Plugins\VFPC\VFPC.dll
 Plugins	Plugin5	\OKAC\Plugins\vSID\vSID.dll

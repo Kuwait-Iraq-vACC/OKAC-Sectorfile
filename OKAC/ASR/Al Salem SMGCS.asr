@@ -18,4 +18,5 @@ WINDOWAREA:29.328245:47.482142:29.365565:47.562022
 PLUGIN:Ground Radar plugin:AirportElevation:472
 PLUGIN:Ground Radar plugin:AirportRadius:2.0
 PLUGIN:Ground Radar plugin:GroundMode:OKAS
+PLUGIN:Ground Radar plugin:ShowMapData:OKAS
 PLUGIN:TopSky plugin:ShowMapData:NONE
