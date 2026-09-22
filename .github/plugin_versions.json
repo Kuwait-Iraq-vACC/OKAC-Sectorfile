@@ -58,7 +58,7 @@
   "vacs": {
     "schemaVersion": 1,
     "label": "vacs",
-    "message": "acs-client-v2.7.0",
+    "message": "acs-client-v2.8.0",
     "color": "blue",
     "repo": "vacs-project/vacs"
   },
