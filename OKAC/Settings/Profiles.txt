@@ -1,23 +1,23 @@
 PROFILE
 PROFILE:OKKK_TWR:50:4
 ATIS2:Kuwait Tower | DCL [OKKK]
-ATIS3:Submit TOBT @ vats.im/vdgs
+ATIS3:New scenery at vats.im/OKKKscenery | Submit TOBT @ vats.im/vdgs
 ATIS4:Submit feedback at vats.im/kwiq-fb
 PROFILE:OKKK_1_GND:20:3
 ATIS2:Kuwait Ground | DCL [OKKK]
-ATIS3:Submit TOBT @ vats.im/vdgs
+ATIS3:New scenery at vats.im/OKKKscenery | Submit TOBT @ vats.im/vdgs
 ATIS4:Submit feedback at vats.im/kwiq-fb
 PROFILE:OKKK_2_GND:20:3
 ATIS2:Kuwait Ground | DCL [OKKK]
-ATIS3:Submit TOBT @ vats.im/vdgs
+ATIS3:New scenery at vats.im/OKKKscenery | Submit TOBT @ vats.im/vdgs
 ATIS4:Submit feedback at vats.im/kwiq-fb
 PROFILE:OKKK_P_DEL:10:2
 ATIS2:Kuwait Delivery | DCL [OKKK]
-ATIS3:Submit TOBT @ vats.im/vdgs
+ATIS3:New scenery at vats.im/OKKKscenery | Submit TOBT @ vats.im/vdgs
 ATIS4:Request clearance 10 minutes prior to start up
 PROFILE:OKKK_DEL:10:2
 ATIS2:Kuwait Delivery | DCL [OKKK]
-ATIS3:Submit TOBT @ vats.im/vdgs
+ATIS3:New scenery at vats.im/OKKKscenery | Submit TOBT @ vats.im/vdgs
 ATIS4:Request clearance 10 minutes prior to start up
 PROFILE:OKAS_TWR:50:4
 ATIS2:Al Salem Tower
