@@ -173,7 +173,7 @@
 .ctl Runway $arrrwy($arr), surface wind $wind($arr), cleared to land
 .ctg Runway $arrrwy($arr), surface wind $wind($arr), cleared touch and go
 .cla Runway $arrrwy($arr), surface wind $wind($arr), cleared low approach
-.la Traffic vacating via $1, runway $wind($arr), cleared to land
+.la Traffic vacating via $1, runway $arrrwy($arr), cleared to land
 .capp Continue approach runway $arrrwy($arr), surface wind $wind($arr)
 .clp Cleared low pass
 .fs Make full stop
