@@ -71,7 +71,7 @@
 .runway The VATSIM CoC (B1) states that a pilot shall not connect to the VATSIM network on a runway. Please disconnect immediately and re-connect at an open stand.
 .helpvacate You have not properly vacated the runway. After landing, you have to continue taxiing off the runway and past the hold short line until your whole aircraft is clear. If you stop before this point, you are considered still on the runway and can cause significant delays and issues for ATC and other pilots. If you are unable to follow further instructions, a supervisor will be called.
 .helphs You have not correctly followed a hold short instruction. When instructed to hold short, you are required to hold before that position ensuring that there is enough space for other aircraft to pass on that taxiway. Taxiing beyond your clearance limit can cause significant delays and issues for ATC and pilots. If you are unable to follow further instructions, a supervisor will be called.
-.warn As per VATSIM CoC (B8(c)), pilots are expected to promptly comply with basic air traffic control instructions that are applicable to their flight rules. This includes instructions such as holding; flying a speed, heading or flight level; approach to land; correctly fly a cleared routing; fly a holding patter. It appears that you are unable to comply with these instructions. If you do not comply with further instructions a supervisor will be called.
+.warn As per VATSIM CoC (B8(c)), pilots are expected to promptly comply with basic air traffic control instructions that are applicable to their flight rules. This includes instructions such as holding; flying a speed, heading or flight level; approach to land; correctly fly a cleared routing; fly a holding pattern. It appears that you are unable to comply with these instructions. If you do not comply with further instructions a supervisor will be called.
 .textpilot As per VATSIM CoC (A14(a)), pilots should be able to at a minimum receive voice, but may send messages via text. If you are unable to comply you MUST disconnect from the network otherwise a supervisor will be called.
 
 ;*** Handoffs ***
@@ -200,9 +200,9 @@
 .edl Extend downwind leg
 .ol Orbit left
 .or Orbit right
-.monuoc Monitor 122.800, remain outside of contolled airsapce
-.monaoc Monitor 122.800, remain outside of contolled airsapce
-.rout Remain outside of contolled airsapce
+.monuoc Monitor 122.800, remain outside of controlled airsapce
+.monaoc Monitor 122.800, remain outside of controlled airsapce
+.rout Remain outside of controlled airsapce
 .bcuq $1 QNH $altim($1), broadcast 122.800
 .vfrfpl Plan your flight to remain below the TMA. QNH $altim($1). Report ready for descent
 
@@ -268,15 +268,16 @@
 
 ;*** Vertical ***
 
-.c Climb $temp
-.cus Climb unrestricted $temp
+.c Climb $1
+.cus Climb unrestricted $1
 .ecup Expect climb until passing $1
-.d Descend $temp
-.dq Descent $temp, QNH $altim($arr)
+.d Descend $1
+.da Descend $1 ft, QNH $altim($arr)
+.dq Descend $1, QNH $altim($arr)
 .ed Expedite descent
 .edup Expedite descent until passing $1
-.wrdfl When ready, descend $temp
-.wrdfllb When ready, descend $temp to be level by $uc($1)
+.wrdfl When ready, descend $1
+.wrdfllb When ready, descend $1 to be level by $uc($1)
 .hold Enter the hold at $uc($1). Onward clearance time $2
 .cstaralt Cancel altitude restrictions on STAR
 
@@ -289,7 +290,7 @@
 .mps Maintain present speed
 .isb Increase speed by $1 knots
 .rdb Reduce speed by $1 knots
-.imb Increae mach number by $1
+.imb Increase mach number by $1
 .rmb Reduce mach number by $1
 .rns Resume normal speed
 .rmas Reduce to minimum approach speed
@@ -312,7 +313,7 @@
 .cilsre Cleared for ILS approach runway $arrrwy($arr), report established
 .cilsz Cleared for ILS Z approach runway $arrrwy($arr)
 .cilszre Cleared for ILS Z approach runway $arrrwy($arr), report established
-.crnp Cleared for RNP approach runwy $arrrwy($arr)
+.crnp Cleared for RNP approach runway $arrrwy($arr)
 .cva Cleared visual approach runway $arrrwy($arr), 
 .leave Leave $uc($1) heading $2
 .rjs Rejoin STAR at $uc($1)
