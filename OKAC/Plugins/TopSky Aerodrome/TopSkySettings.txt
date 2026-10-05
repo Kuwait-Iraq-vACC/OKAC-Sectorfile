@@ -236,7 +236,7 @@ Color_Urgency_FL=225,25,25
 Color_Information_FL=41,245,41
 Color_Potential=41,40,216
 Color_Potential_FL=40,41,216
-Color_QDM=190,225,250
+Color_QDM=255,255,255
 Color_Heading_Vector=170,231,197
 
 Color_Map_Info=70,70,60
