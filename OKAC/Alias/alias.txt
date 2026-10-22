@@ -74,6 +74,8 @@
 .warn As per VATSIM CoC (B8(c)), pilots are expected to promptly comply with basic air traffic control instructions that are applicable to their flight rules. This includes instructions such as holding; flying a speed, heading or flight level; approach to land; correctly fly a cleared routing; fly a holding pattern. It appears that you are unable to comply with these instructions. If you do not comply with further instructions a supervisor will be called.
 .textpilot As per VATSIM CoC (A14(a)), pilots should be able to at a minimum receive voice, but may send messages via text. If you are unable to comply you MUST disconnect from the network otherwise a supervisor will be called.
 
+.scenery New scenery with the updated runway and ground layout is available for MSFS2024 ONLY at https://vats.im/OKKKscenery
+
 ;*** Handoffs ***
 
 .ho Contact $radioname($1) on $freq($1)
