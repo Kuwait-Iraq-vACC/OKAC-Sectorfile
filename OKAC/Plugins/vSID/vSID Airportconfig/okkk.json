@@ -3,10 +3,13 @@
         "elevation": 204,
         "runways": "33L,33R,15L,15R,16,34",
         "transAlt": 13000,
-        "maxInitialClimb": 4000,
-        "intersections": {"15R": "W15, W18, M15, M14, W5, W4", "33L": "W1, W2", "15L": "LP1, LP2", "33R": "LP1, LP2, E2", "16": "V8, V9, V10", "34": "V1, V2, V3"},
-        "appSI": "KKA, K",
-        "enableRVSids": false,
+        "maxInitialClimb": 15000,
+        "intersections": {"15R": "W15,W18,M15,M14,W5,W4", "33L": "W1,W2", "15L": "LP1,LP2", "33R": "LP1,LP2,E2", "16": "V8,V9,V10", "34": "V1,V2,V3"},
+        "timeMode": false,
+		"timezone": "Asia/Kuwait",
+		"appSI": "KKF,KKA,K",
+        "enableRVSids": true,
+        "autoHandoff": false,
         "sids": {
             "ALVAX": {
                 "F": {
@@ -182,22 +185,6 @@
                 },
                 "K": {
 					"4": {
-						"rwy": "16",
-						"initial": 4000,
-						"prio": 1
-					}
-                }
-            },
-            "RALKA": {
-                "E": {
-					"1": {
-						"rwy": "15R",
-						"initial": 4000,
-						"prio": 1
-					}
-                },
-                "K": {
-					"2": {
 						"rwy": "16",
 						"initial": 4000,
 						"prio": 1
