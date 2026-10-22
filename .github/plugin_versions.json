@@ -44,9 +44,9 @@
   "Slots-Plugin": {
     "schemaVersion": 1,
     "label": "Slots-Plugin",
-    "message": "1.1.11",
+    "message": "1.2.0",
     "color": "blue",
-    "repo": "VATSIMCanada/Slots-Plugin"
+    "repo": "frazerxyz/Slots-Plugin"
   },
   "TopSky": {
     "schemaVersion": 1,
