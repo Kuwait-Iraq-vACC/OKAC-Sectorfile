@@ -22,12 +22,12 @@ jobs:
 
       - name: Write release name to AIRAC_VERSION.txt
         run: |
-          printf '%s' "$RELEASE_NAME" > ORBB/Plugins/AIRAC_VERSION.txt
+          printf '%s' "$RELEASE_NAME" > OKAC/Plugins/AIRAC_VERSION.txt
           echo "AIRAC_VERSION.txt set to: $RELEASE_NAME"
 
       - name: Create branch, commit and open PR
         run: |
-          git add ORBB/Plugins/AIRAC_VERSION.txt
+          git add OKAC/Plugins/AIRAC_VERSION.txt
           if git diff --cached --quiet; then
             echo "No change to AIRAC_VERSION.txt"
             exit 0
@@ -45,5 +45,5 @@ jobs:
             --base main \
             --head "$BRANCH" \
             --title "Update AIRAC_VERSION.txt to $RELEASE_NAME" \
-            --body "Automated update of \`ORBB/Plugins/AIRAC_VERSION.txt\` to \`$RELEASE_NAME\` following release [$RELEASE_NAME](${{ github.event.release.html_url }})." \
+            --body "Automated update of \`OKAC/Plugins/AIRAC_VERSION.txt\` to \`$RELEASE_NAME\` following release [$RELEASE_NAME](${{ github.event.release.html_url }})." \
             --reviewer JYang365
