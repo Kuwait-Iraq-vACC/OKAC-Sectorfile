@@ -3,11 +3,11 @@ PROFILE:OKKK_TWR:50:4
 ATIS2:Kuwait Tower | DCL [OKKK]
 ATIS3:Pilot briefing and scenery at vats.im/OKKKbrief | Submit TOBT @ vats.im/vdgs
 ATIS4:Submit feedback at vats.im/kwiq-fb
-PROFILE:OKKK_1_GND:20:3
+PROFILE:OKKK_E_GND:20:3
 ATIS2:Kuwait Ground | DCL [OKKK]
 ATIS3:Pilot briefing and scenery at vats.im/OKKKbrief | Submit TOBT @ vats.im/vdgs
 ATIS4:Submit feedback at vats.im/kwiq-fb
-PROFILE:OKKK_2_GND:20:3
+PROFILE:OKKK_W_GND:20:3
 ATIS2:Kuwait Ground | DCL [OKKK]
 ATIS3:Pilot briefing and scenery at vats.im/OKKKbrief | Submit TOBT @ vats.im/vdgs
 ATIS4:Submit feedback at vats.im/kwiq-fb
