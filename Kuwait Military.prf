@@ -45,20 +45,21 @@ Sounds	Sound15	\OKAC\Sounds\new_atis.wav
 Sounds	Sound16	\OKAC\Sounds\handoff_refused.wav
 Sounds	Sound17	\OKAC\Sounds\pointout.wav
 Sounds	Sound18	\OKAC\Sounds\startup.wav
-Plugins	Plugin0	\OKAC\Plugins\DiscordEuroScope\DiscordEuroscope.dll
-Plugins	Plugin1	\OKAC\Plugins\TopSky\TopSky.dll
-Plugins	Plugin1Display0	Ground Radar display
-Plugins	Plugin1Display1	Standard ES radar screen
-Plugins	Plugin2	\OKAC\Plugins\GRplugin\GRplugin.dll
+Plugins	Plugin0	\OKAC\Plugins\KWIQ Controller Plugin\KWIQPlugin.dll
+Plugins	Plugin0Display0	Ground Radar display
+Plugins	Plugin0Display1	Standard ES radar screen
+Plugins	Plugin1	\OKAC\Plugins\DiscordEuroScope\DiscordEuroscope.dll
+Plugins	Plugin2	\OKAC\Plugins\TopSky\TopSky.dll
 Plugins	Plugin2Display0	Ground Radar display
-Plugins	Plugin3	\OKAC\Plugins\VCH\VCH.dll
+Plugins	Plugin2Display1	Standard ES radar screen
+Plugins	Plugin3	\OKAC\Plugins\GRplugin\GRplugin.dll
+Plugins	Plugin3Display0	Ground Radar display
 Plugins	Plugin4	\OKAC\Plugins\VFPC\VFPC.dll
 Plugins	Plugin5	\OKAC\Plugins\vSID\vSID.dll
 Plugins	Plugin5Display0	Ground Radar display
 Plugins	Plugin5Display1	Standard ES radar screen
 Plugins	Plugin8	\OKAC\Plugins\P21Euroscope.dll
 Plugins	Plugin8Display0	Standard ES radar screen
-Plugins	Plugin9	\OKAC\Plugins\VATCAN Bookings\VATCANBookings.dll
 ASRFastKeys	1	\OKAC\ASR\Kuwait FIR.asr
 ASRFastKeys	2	\OKAC\ASR\Al Jaber SMGCS.asr
 ASRFastKeys	3	\OKAC\ASR\Al Salem SMGCS.asr
