@@ -20,6 +20,7 @@ Settings	SettingsfileTAGS	\OKAC\Settings\Tags.txt
 Settings	SettingsfileVCCS	\OKAC\Settings\VCCS.txt
 Settings	SettingsfileVOICE	\OKAC\Settings\Voice\Aerodrome Voice.txt
 Settings	SettingsfileSTUP	\OKAC\Settings\Lists.txt
+Settings	SettingsfileTAXIOUT	\OKAC\Settings\Lists.txt
 Sounds	Sound0	\OKAC\Sounds\handoff_request.wav
 Sounds	Sound1	\OKAC\Sounds\handoff_accept.wav
 Sounds	Sound2	\OKAC\Sounds\conflict_alert.wav
