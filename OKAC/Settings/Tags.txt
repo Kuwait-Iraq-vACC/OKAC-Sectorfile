@@ -501,8 +501,9 @@ TAGITEM:1::1:0:0:0::0:1:::0
 TAGTYPE:23:0:0
 TAGITEM:1::1:0:0:0::0:1:::0
 TAGFAMILY:TopSky_TWR
-TAGTYPE:0:6:1
+TAGTYPE:0:7:1
 TAGITEM:72::0:1:0:0:TopSky plugin:0:1:::1
+TAGITEM:1002::0:0:0:0:KWIQ Controller Plugin:0:1:::1
 TAGITEM:109::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:23::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:26::0:1:0:0:TopSky plugin:0:1:::1
@@ -514,8 +515,9 @@ TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
 TAGITEM:159::0:0:0:0:TopSky plugin:0:1:::1
 TAGITEM:0::0:0:0:0::0:1:::1
 TAGITEM:40::0:1:0:0:TopSky plugin:0:1:::1
-TAGTYPE:1:6:1
+TAGTYPE:1:7:1
 TAGITEM:72::0:1:0:0:TopSky plugin:0:1:::1
+TAGITEM:1002::0:0:0:0:KWIQ Controller Plugin:0:1:::1
 TAGITEM:109::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:23::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:26::0:1:0:0:TopSky plugin:0:1:::1
@@ -527,8 +529,9 @@ TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
 TAGITEM:159::0:0:0:0:TopSky plugin:0:1:::1
 TAGITEM:0::0:0:0:0::0:1:::1
 TAGITEM:40::0:1:0:0:TopSky plugin:0:1:::1
-TAGTYPE:2:6:1
+TAGTYPE:2:7:1
 TAGITEM:72::0:1:0:0:TopSky plugin:0:1:::1
+TAGITEM:1002::0:0:0:0:KWIQ Controller Plugin:0:1:::1
 TAGITEM:109::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:23::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:26::0:1:0:0:TopSky plugin:0:1:::1
@@ -545,8 +548,9 @@ TAGITEM:40::0:1:15:0:TopSky plugin:0:1:TopSky plugin::1
 TAGITEM:70::0:1:29:0:TopSky plugin:0:1:::1
 TAGTYPE:3:0:0
 TAGITEM:16::1:0:0:0:TopSky plugin:0:1:::0
-TAGTYPE:4:6:1
+TAGTYPE:4:7:1
 TAGITEM:72::0:1:0:0:TopSky plugin:0:1:::1
+TAGITEM:1002::0:0:0:0:KWIQ Controller Plugin:0:1:::1
 TAGITEM:109::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:23::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:26::0:1:0:0:TopSky plugin:0:1:::1
@@ -618,8 +622,9 @@ TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
 TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
 TAGITEM:0::0:0:0:0::0:1:::1
 TAGITEM:40::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:16:6:1
+TAGTYPE:16:7:1
 TAGITEM:72::0:1:0:0:TopSky plugin:0:1:::1
+TAGITEM:1002::0:0:0:0:KWIQ Controller Plugin:0:1:::1
 TAGITEM:109::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:23::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:26::0:1:0:0:TopSky plugin:0:1:::1
@@ -631,8 +636,9 @@ TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
 TAGITEM:159::0:0:0:0:TopSky plugin:0:1:::1
 TAGITEM:0::0:0:0:0::0:1:::1
 TAGITEM:40::0:1:0:0:TopSky plugin:0:1:::1
-TAGTYPE:17:6:1
+TAGTYPE:17:7:1
 TAGITEM:72::0:1:0:0:TopSky plugin:0:1:::1
+TAGITEM:1002::0:0:0:0:KWIQ Controller Plugin:0:1:::1
 TAGITEM:109::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:23::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:26::0:1:0:0:TopSky plugin:0:1:::1
