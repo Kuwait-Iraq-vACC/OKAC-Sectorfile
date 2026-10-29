@@ -8,7 +8,7 @@ ATIS2:Kuwait Ground | DCL [OKKK]
 ATIS3:Pilot briefing and scenery at vats.im/OKKKbrief | Submit TOBT @ vats.im/vdgs
 ATIS4:Submit feedback at vats.im/kwiq-fb
 PROFILE:OKKK_W_GND:20:3
-ATIS2:Kuwait Ground | DCL [OKKK]
+ATIS2:Kuwait Ground
 ATIS3:Pilot briefing and scenery at vats.im/OKKKbrief | Submit TOBT @ vats.im/vdgs
 ATIS4:Submit feedback at vats.im/kwiq-fb
 PROFILE:OKKK_P_DEL:10:2
