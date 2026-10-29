@@ -167,8 +167,6 @@ Airspace_P_Flag=EIDW
 Airspace_No_DUPE_Codes=7000,2000,2200,1200,2655,0401
 Airspace_SIGMET_Areas=OKAC
 Airspace_NOTAM_Add=OKAC
-Airspace_ASSR_Type=2
-Airspace_ASSR_AutoAssign_Type=0
 Areas_Label_FontSize=6
 
 
