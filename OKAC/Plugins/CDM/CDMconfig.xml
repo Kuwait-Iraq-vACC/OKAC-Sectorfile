@@ -33,6 +33,12 @@
 	<eventPriority mode="true" />
 	<autoSetTobtFromEvSlot mode="false" />
 	<remarksOptionCtot mode="false" />
+	<disableTobtReqAfterAsrt mode="true" />
 	<PrivateMessage text="[ATFCM MSG] Your TOBT is invalid. Refile on https://vats.im/vdgs and report ready within TOBT -5. [END OF ATFCM MSG]" />
 	<loading text="...." />
+	<nonCdmEarlyClearenceColor minutes="0" />
+	<AtfcmPrivateMessage
+		fls="[ATFCM MSG] OFF-BLOCK TIME EXPIRED - {CALLSIGN} ({EOBT} - {TOBT}). Please update your off-block time."
+        slot="[ATFCM MSG] SLOT ALLOCATION - {CALLSIGN} ({EOBT} - {TOBT}) CTOT:{CTOT} REGUL:{REGUL}. Please monitor for updates."
+	/>
 </CDM>
