@@ -86,9 +86,15 @@ def build(folder, output_name):
         print(f'[SKIP] No files found for {output_name}')
         return
 
+    deduped = list(dict.fromkeys(files))
+    if len(deduped) != len(files):
+        print(f'[INFO] Removed {len(files) - len(deduped)} duplicate file reference(s)')
+    files = deduped
+
     primary = OUTPUTS[0] + output_name
     os.makedirs(OUTPUTS[0], exist_ok=True)
 
+    written = 0
     with open(primary, 'wb') as out:
         for relative_path in files:
             full_path = src_folder + relative_path
@@ -98,8 +104,11 @@ def build(folder, output_name):
             with open(full_path, 'rb') as f:
                 shutil.copyfileobj(f, out)
                 out.write(b'\n\n')
+            written += 1
 
-    print(f'[OK]   Built {primary} from {len(files)} file(s)')
+    missing = len(files) - written
+    print(f'[OK]   Built {primary} from {written} file(s)'
+          + (f' ({missing} missing)' if missing else ''))
 
     for output in OUTPUTS[1:]:
         os.makedirs(output, exist_ok=True)
@@ -169,7 +178,9 @@ def read_index_with_remainder(folder_path, prefix, index_path):
     covered = set()
     label = prefix.rstrip('/') or '(root)'
 
-    with open(index_path, 'r') as f:
+    # utf-8-sig so a BOM (added by some Windows editors) doesn't get
+    # glued onto the first entry and make it unresolvable
+    with open(index_path, 'r', encoding='utf-8-sig') as f:
         for raw_line in f:
             line = raw_line.split('//')[0].strip()  # strip comments
             if not line:
@@ -186,7 +197,12 @@ def read_index_with_remainder(folder_path, prefix, index_path):
                     continue
                 sub_files = collect_txt_files(sub_path, prefix=prefix + sub_name + '/')
                 files.extend(sub_files)
-                covered.add(sub_name)
+                # Only the top-level segment matters here — collect_remainder()
+                # checks entry.name (immediate child of folder_path) against this
+                # set, so a nested entry like "GroundLayouts/OKKK" must still mark
+                # "GroundLayouts" as covered, or the remainder scan will recurse
+                # into it again and duplicate everything already pulled in above.
+                covered.add(sub_name.split('/')[0])
                 print(f'[INFO] {prefix}{line} expanded to {len(sub_files)} file(s)')
 
             elif '.' in line:
