@@ -149,6 +149,7 @@ def build(variant, folder, output_name):
     dst = variant['output'] + output_name
     os.makedirs(variant['output'], exist_ok=True)
 
+    written = 0
     with open(dst, 'wb') as out:
         for relative_path in files:
             full_path = src_folder + relative_path
@@ -158,8 +159,11 @@ def build(variant, folder, output_name):
             with open(full_path, 'rb') as f:
                 shutil.copyfileobj(f, out)
                 out.write(b'\n\n')
+            written += 1
 
-    print(f'[OK]   Built {dst} from {len(files)} file(s)')
+    missing = len(files) - written
+    print(f'[OK]   Built {dst} from {written} file(s)'
+          + (f' ({missing} missing)' if missing else ''))
 
 
 # ============================================================
@@ -189,7 +193,9 @@ def read_index_with_remainder(folder_path, prefix, index_path, colour):
     covered = set()
     label = prefix.rstrip('/') or '(root)'
 
-    with open(index_path, 'r') as f:
+    # utf-8-sig so a BOM (added by some Windows editors) doesn't get
+    # glued onto the first entry and make it unresolvable
+    with open(index_path, 'r', encoding='utf-8-sig') as f:
         for raw_line in f:
             line = raw_line.split('//')[0].strip()
             if not line:
