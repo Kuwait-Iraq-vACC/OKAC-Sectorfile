@@ -1,0 +1,125 @@
+name: Protect Generated Files
+
+# Files under OKAC/Plugins/ (TopSky, GRplugin …) are built from
+# .data/ by the compiler workflows. A hand edit to one of them is lost the
+# next time its sources change and the compiler runs again.
+#
+# On every push to main this re-runs the compilers. Any file the push
+# changed that the compilers would now write differently was edited by
+# hand: an issue is opened saying so, plus a PR that restores the
+# generated version, so the edit can be moved into .data/ instead.
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  check:
+    name: Check for hand edits to generated files
+    # Pushes by the compiler workflows themselves are the generated output
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Re-run the compilers
+        run: |
+          python .github/scripts/GRplugin/Concatenate-GRplugin-Shared.py
+          python .github/scripts/TopSky/Concatenate-TopSky-Shared.py
+
+      - name: Find generated files edited by hand
+        id: find
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          # First push of a branch / force push: fall back to the parent commit
+          if ! git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+            BEFORE=$(git rev-parse "${GITHUB_SHA}~1")
+          fi
+          echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
+
+          # Print paths with spaces/non-ASCII as-is, not quoted
+          git config core.quotePath false
+
+          # Files the compilers would change, and files this push changed
+          git diff --name-only | sort > "$RUNNER_TEMP/regenerated.txt"
+          git diff --name-only "$BEFORE" "$GITHUB_SHA" | sort > "$RUNNER_TEMP/pushed.txt"
+          comm -12 "$RUNNER_TEMP/regenerated.txt" "$RUNNER_TEMP/pushed.txt" > "$RUNNER_TEMP/edited.txt"
+
+          if [ -s "$RUNNER_TEMP/edited.txt" ]; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+            echo "Hand-edited generated files:"
+            cat "$RUNNER_TEMP/edited.txt"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "No generated files were edited by hand."
+          fi
+
+      - name: Open issue and revert PR
+        if: steps.find.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BEFORE: ${{ steps.find.outputs.before }}
+          PUSHER: ${{ github.actor }}
+        run: |
+          short=$(git rev-parse --short "$GITHUB_SHA")
+          branch="protect/revert-generated-$short"
+          mapfile -t edited < "$RUNNER_TEMP/edited.txt"
+          files_md=$(sed 's/.*/- `&`/' "$RUNNER_TEMP/edited.txt")
+          commits_md=$(git log --format='- %h %s (%an)' "$BEFORE..$GITHUB_SHA" -- "${edited[@]}")
+
+          # Branch with only the edited files put back to their generated content
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git switch -c "$branch"
+          git add -- "${edited[@]}"
+          git commit -m "Revert hand edits to generated files from $short"
+          git push origin "$branch"
+
+          cat > "$RUNNER_TEMP/issue.md" <<EOF
+          A push to \`main\` by @$PUSHER edited files that are **generated** from \`.data/\`:
+
+          $files_md
+
+          Commits:
+          $commits_md
+
+          These edits **will be overwritten** the next time the file is rebuilt, which happens whenever its sources in \`.data/\` change. Make the change in the matching source files under \`.data/\` instead, so it survives the rebuild.
+
+          A PR restoring the generated version is opened alongside this issue. Before merging it, copy anything worth keeping from the commits above into \`.data/\`.
+          EOF
+
+          issue_url=$(gh issue create \
+            --title "Generated files edited directly on main ($short)" \
+            --body-file "$RUNNER_TEMP/issue.md")
+          echo "Opened $issue_url"
+
+          cat > "$RUNNER_TEMP/pr.md" <<EOF
+          Restores the generated version of:
+
+          $files_md
+
+          These were edited by hand in $short and would be overwritten on the next rebuild anyway. See $issue_url.
+
+          Closes #${issue_url##*/}
+          EOF
+
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --title "Revert hand edits to generated files ($short)" \
+            --body-file "$RUNNER_TEMP/pr.md"
