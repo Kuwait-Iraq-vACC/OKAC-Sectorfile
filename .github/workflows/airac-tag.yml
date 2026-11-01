@@ -7,12 +7,16 @@ on:
 
 permissions: {}
 
+concurrency:
+  group: airac-tag
+  cancel-in-progress: false
+
 jobs:
   tag:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      contents: write
+      contents: read
     steps:
       - name: Generate GitHub token
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
@@ -26,24 +30,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
+          ref: main
           persist-credentials: false
           token: ${{ steps.generate-token.outputs.token }}
 
-      - name: Check for AIRAC cycle
+      # Picks the most recent cycle that is already effective, not only one dated
+      # exactly today. Every step below is idempotent, so a delayed, skipped or
+      # failed scheduled run is caught up by the next one.
+      - name: Find current AIRAC cycle
         id: check
         shell: bash
         run: |
           TODAY=$(date -u +%Y-%m-%d)
-          echo "Checking for AIRAC cycle on $TODAY..."
 
-          CYCLE=$(grep "^$TODAY:" .github/airac-cycles.yml | cut -d '"' -f 2 || true)
+          read -r EFFECTIVE_DATE CYCLE < <(
+            awk -F: -v today="$TODAY" '
+              $1 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $1 <= today && $1 > date {
+                cycle = $2; gsub(/[ "\r]/, "", cycle); date = $1
+              }
+              END { if (date) print date, cycle }
+            ' .github/airac-cycles.yml
+          ) || true
 
-          if [[ -n "$CYCLE" ]]; then
-            echo "Found AIRAC cycle: $CYCLE"
-            echo "cycle_name=$CYCLE" >> "$GITHUB_OUTPUT"
-          else
-            echo "No AIRAC cycle found for today."
+          if [[ -z "$CYCLE" ]]; then
+            echo "::warning::No effective AIRAC cycle found in .github/airac-cycles.yml for $TODAY."
+            exit 0
           fi
+
+          echo "Current AIRAC cycle: $CYCLE (effective $EFFECTIVE_DATE, today $TODAY)"
+          echo "cycle_name=$CYCLE" >> "$GITHUB_OUTPUT"
+          echo "effective_date=$EFFECTIVE_DATE" >> "$GITHUB_OUTPUT"
 
       - name: Create AIRAC tag
         if: steps.check.outputs.cycle_name != ''
@@ -54,23 +70,25 @@ jobs:
         run: |
           TAG_NAME="airac-$CYCLE"
 
-          if gh api "repos/$GH_REPO/git/refs/tags/$TAG_NAME" --silent 2>/dev/null; then
+          if gh api "repos/$GH_REPO/git/ref/tags/$TAG_NAME" --silent 2>/dev/null; then
             echo "Tag $TAG_NAME already exists, skipping."
             exit 0
           fi
 
-          echo "Creating annotated tag $TAG_NAME"
+          COMMIT_SHA=$(git rev-parse HEAD)
+          echo "Creating annotated tag $TAG_NAME on $COMMIT_SHA"
 
           TAG_SHA=$(gh api "repos/$GH_REPO/git/tags" \
             -f tag="$TAG_NAME" \
             -f message="AIRAC cycle $CYCLE" \
-            -f object="${{ github.sha }}" \
+            -f object="$COMMIT_SHA" \
             -f type="commit" \
             --jq '.sha')
 
           gh api "repos/$GH_REPO/git/refs" \
             -f ref="refs/tags/$TAG_NAME" \
-            -f sha="$TAG_SHA"
+            -f sha="$TAG_SHA" \
+            --silent
 
           echo "Created tag $TAG_NAME"
 
@@ -83,7 +101,7 @@ jobs:
         run: |
           MILESTONE_TITLE="AIRAC $CYCLE"
 
-          MILESTONE_NUMBER=$(gh api "repos/$GH_REPO/milestones?state=open&per_page=100" \
+          MILESTONE_NUMBER=$(gh api --paginate "repos/$GH_REPO/milestones?state=open&per_page=100" \
             --jq ".[] | select(.title == \"$MILESTONE_TITLE\") | .number" | head -1)
 
           if [[ -z "$MILESTONE_NUMBER" ]]; then
@@ -95,29 +113,6 @@ jobs:
             -f state="closed" --silent
 
           echo "Closed milestone: $MILESTONE_TITLE (#$MILESTONE_NUMBER)"
-
-      - name: Update issue template AIRAC placeholders
-        if: steps.check.outputs.cycle_name != ''
-        env:
-          CYCLE: ${{ steps.check.outputs.cycle_name }}
-          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Replace any existing AIRAC placeholder (e.g. 2604/01) with the new cycle
-          find .github/ISSUE_TEMPLATE -name "*.yml" -o -name "*.yaml" | \
-            xargs sed -i "s/placeholder: e\.g\. [0-9]\{4\}\/[0-9]\{2\}/placeholder: e.g. $CYCLE/g"
-
-          if git diff --quiet; then
-            echo "No placeholder changes needed."
-            exit 0
-          fi
-
-          git add .github/ISSUE_TEMPLATE/
-          git commit -m "chore: update issue template AIRAC placeholder to $CYCLE"
-          git push
 
       - name: Unlock AIRAC PRs
         if: steps.check.outputs.cycle_name != ''
@@ -131,7 +126,7 @@ jobs:
           MARKER="<!-- airac-gate-bot -->"
 
           PR_NUMBERS=$(gh pr list --repo "$GH_REPO" --label "$LABEL" \
-            --state open --json number --jq '.[].number')
+            --state open --limit 200 --json number --jq '.[].number')
 
           if [[ -z "$PR_NUMBERS" ]]; then
             echo "No open PRs with label $LABEL"
@@ -147,9 +142,10 @@ jobs:
           for pr in $PR_NUMBERS; do
             echo "Unlocking PR #$pr..."
 
+            # Removing the label re-runs the AIRAC Gate check on the PR
             gh pr edit "$pr" --repo "$GH_REPO" --remove-label "$LABEL"
 
-            COMMENT_ID=$(gh api "repos/$GH_REPO/issues/$pr/comments" \
+            COMMENT_ID=$(gh api --paginate "repos/$GH_REPO/issues/$pr/comments" \
               --jq ".[] | select(.body | startswith(\"$MARKER\")) | .id" | head -1)
 
             if [[ -n "$COMMENT_ID" ]]; then
@@ -172,3 +168,35 @@ jobs:
           done
 
           echo "### ✅ Unlocked $(echo "$PR_NUMBERS" | wc -w | tr -d ' ') PR(s) for AIRAC $CYCLE" >> "$GITHUB_STEP_SUMMARY"
+
+      # Runs last so a failed push can never stop PRs from being unlocked
+      - name: Update issue template AIRAC placeholders
+        if: steps.check.outputs.cycle_name != ''
+        env:
+          CYCLE: ${{ steps.check.outputs.cycle_name }}
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+
+          # "e.g. 2604/01" (TopSky release) -> "e.g. <cycle>/01"
+          # "e.g. 2604"    (AIRAC cycle)    -> "e.g. <cycle>"
+          find .github/ISSUE_TEMPLATE -type f \( -name "*.yml" -o -name "*.yaml" \) -print0 | \
+            xargs -0 -r sed -i -E \
+              -e "s#(placeholder: e\.g\. )[0-9]{4}/[0-9]{2}([[:space:]]*)\$#\1$CYCLE/01\2#" \
+              -e "s#(placeholder: e\.g\. )[0-9]{4}([[:space:]]*)\$#\1$CYCLE\2#"
+
+          if git diff --quiet; then
+            echo "No placeholder changes needed."
+            exit 0
+          fi
+
+          git diff --stat
+          git add .github/ISSUE_TEMPLATE/
+          git commit -m "chore: update issue template AIRAC placeholder to $CYCLE"
+
+          REMOTE="https://x-access-token:${GH_TOKEN}@github.com/${GH_REPO}.git"
+          git pull --rebase "$REMOTE" main
+          git push "$REMOTE" HEAD:main

@@ -4,30 +4,52 @@ on:
   release:
     types: [published]
 
-permissions:
-  contents: write
-  pull-requests: write
+permissions: {}
 
 jobs:
   update-airac-version:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
     env:
       RELEASE_NAME: ${{ github.event.release.name || github.event.release.tag_name }}
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      RELEASE_URL: ${{ github.event.release.html_url }}
+      VERSION_FILE: OKAC/Plugins/AIRAC_VERSION.txt
     steps:
+      # PRs opened with GITHUB_TOKEN are blocked by the repo's Actions settings and
+      # would not trigger CI, so the vACC GitHub App opens them instead
+      - name: Generate GitHub token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        id: generate-token
+        with:
+          client-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+
       - name: Checkout main
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           ref: main
+          persist-credentials: false
+          token: ${{ steps.generate-token.outputs.token }}
 
       - name: Write release name to AIRAC_VERSION.txt
         run: |
-          printf '%s' "$RELEASE_NAME" > OKAC/Plugins/AIRAC_VERSION.txt
+          if [[ ! "$RELEASE_NAME" =~ ^[0-9]{4}/[0-9]{2}$ ]]; then
+            echo "::warning::Release name '$RELEASE_NAME' is not in the usual YYCC/NN format."
+          fi
+
+          printf '%s' "$RELEASE_NAME" > "$VERSION_FILE"
           echo "AIRAC_VERSION.txt set to: $RELEASE_NAME"
 
       - name: Create branch, commit and open PR
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
-          git add OKAC/Plugins/AIRAC_VERSION.txt
+          git add "$VERSION_FILE"
           if git diff --cached --quiet; then
             echo "No change to AIRAC_VERSION.txt"
             exit 0
@@ -39,11 +61,16 @@ jobs:
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
           git commit -m "Update AIRAC_VERSION.txt to $RELEASE_NAME"
-          git push --force origin "$BRANCH"
+          git push --force "https://x-access-token:${GH_TOKEN}@github.com/${GH_REPO}.git" "$BRANCH"
+
+          if [[ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]]; then
+            echo "PR for $BRANCH already open, branch updated."
+            exit 0
+          fi
 
           gh pr create \
             --base main \
             --head "$BRANCH" \
             --title "Update AIRAC_VERSION.txt to $RELEASE_NAME" \
-            --body "Automated update of \`OKAC/Plugins/AIRAC_VERSION.txt\` to \`$RELEASE_NAME\` following release [$RELEASE_NAME](${{ github.event.release.html_url }})." \
+            --body "Automated update of \`$VERSION_FILE\` to \`$RELEASE_NAME\` following release [$RELEASE_NAME]($RELEASE_URL)." \
             --reviewer JYang365
