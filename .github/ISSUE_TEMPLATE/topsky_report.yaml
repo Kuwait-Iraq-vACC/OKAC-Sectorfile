@@ -42,7 +42,7 @@ body:
     attributes:
       label: Sectorfile AIRAC
       description: What sectorfile version are you using?
-      placeholder: e.g. 2606/01
+      placeholder: e.g. 2611/01
     validations:
       required: false
   - type: textarea
