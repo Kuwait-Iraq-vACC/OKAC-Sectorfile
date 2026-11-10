@@ -44,18 +44,17 @@ Sounds	Sound15	\OKAC\Sounds\new_atis.wav
 Sounds	Sound16	\OKAC\Sounds\handoff_refused.wav
 Sounds	Sound17	\OKAC\Sounds\pointout.wav
 Sounds	Sound18	\OKAC\Sounds\startup.wav
-Plugins	Plugin0	\OKAC\Plugins\DiscordEuroScope\DiscordEuroscope.dll
-Plugins	Plugin1	\OKAC\Plugins\Audio for VATSIM\AfvEuroScopeBridge.dll
-Plugins	Plugin2	\OKAC\Plugins\TopSky\TopSky.dll
-Plugins	Plugin3	\OKAC\Plugins\MAESTRO\MAESTRO.dll
-Plugins	Plugin4	\OKAC\Plugins\GRplugin\GRplugin.dll
-Plugins	Plugin4Display0	Ground Radar display
-Plugins	Plugin5	\OKAC\Plugins\VATCAN Plugin\VATCANBookings.dll
-Plugins	Plugin5Display0	DelHel
+Plugins	Plugin0	\OKAC\Plugins\Audio for VATSIM\AfvEuroScopeBridge.dll
+Plugins	Plugin1	\OKAC\Plugins\TopSky\TopSky.dll
+Plugins	Plugin2	\OKAC\Plugins\MAESTRO\MAESTRO.dll
+Plugins	Plugin3	\OKAC\Plugins\GRplugin\GRplugin.dll
+Plugins	Plugin3Display0	Ground Radar display
+Plugins	Plugin4	\OKAC\Plugins\VATCAN Plugin\VATCANBookings.dll
+Plugins	Plugin4Display0	DelHel
+Plugins	Plugin1Display0	Standard ES radar screen
+Plugins	Plugin1Display1	SMR radar display
 Plugins	Plugin2Display0	Standard ES radar screen
-Plugins	Plugin2Display1	SMR radar display
-Plugins	Plugin3Display0	Standard ES radar screen
-Plugins	Plugin2Display2	Ground Radar display
+Plugins	Plugin1Display2	Ground Radar display
 RecentFiles	Recent3	\OKAC\ASR\Kuwait GMC.asr
 Settings	SettingsfilePILOTING	\OKAC\Settings\Lists - ACC.txt
 Settings	SettingsfileORIGPLANE	\OKAC\Settings\Lists - ACC.txt
@@ -64,21 +63,21 @@ Settings	SettingsfileTAXIOUT	\OKAC\Settings\Lists - ACC.txt
 Settings	SettingsfileTAKEOFF	\OKAC\Settings\Lists - ACC.txt
 Settings	SettingsfileADCS	\OKAC\Settings\Lists - ACC.txt
 Settings	SettingsfileTAXIIN	\OKAC\Settings\Lists - ACC.txt
+Plugins	Plugin4Display1	Ground Radar display
+Plugins	Plugin4Display2	Standard ES radar screen
+Plugins	Plugin5	\OKAC\Plugins\Delivery Helper\DelHel.dll
+Plugins	Plugin5Display0	DelHel
 Plugins	Plugin5Display1	Ground Radar display
 Plugins	Plugin5Display2	Standard ES radar screen
-Plugins	Plugin6	\OKAC\Plugins\Delivery Helper\DelHel.dll
+Plugins	Plugin6	\OKAC\Plugins\VFPC\VFPC.dll
 Plugins	Plugin6Display0	DelHel
-Plugins	Plugin6Display1	Ground Radar display
-Plugins	Plugin6Display2	Standard ES radar screen
-Plugins	Plugin7	\OKAC\Plugins\VFPC\VFPC.dll
-Plugins	Plugin7Display0	DelHel
+Plugins	Plugin6Display1	Standard ES radar screen
+Plugins	Plugin6Display2	Ground Radar display
+Plugins	Plugin7	\OKAC\Plugins\Virtual Controller Helper\VCH.dll
+Plugins	Plugin7Display0	Ground Radar display
 Plugins	Plugin7Display1	Standard ES radar screen
-Plugins	Plugin7Display2	Ground Radar display
-Plugins	Plugin8	\OKAC\Plugins\Virtual Controller Helper\VCH.dll
+Plugins	Plugin7Display2	DelHel
+Plugins	Plugin8	\OKAC\Plugins\PushbackFlorian_v1.1.1\PushbackFlorian.dll
 Plugins	Plugin8Display0	Ground Radar display
-Plugins	Plugin8Display1	Standard ES radar screen
-Plugins	Plugin8Display2	DelHel
-Plugins	Plugin9	\OKAC\Plugins\PushbackFlorian_v1.1.1\PushbackFlorian.dll
-Plugins	Plugin9Display0	Ground Radar display
-Plugins	Plugin9Display1	DelHel
-Plugins	Plugin9Display2	Standard ES radar screen
+Plugins	Plugin8Display1	DelHel
+Plugins	Plugin8Display2	Standard ES radar screen
