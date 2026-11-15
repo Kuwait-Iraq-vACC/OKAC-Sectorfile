@@ -11,9 +11,9 @@
 
 ### AIRAC dependency
 
-- [ ] This change is **AIRAC-dependent** and should only go live after a specific AIRAC cycle takes effect. **Add the matching `airac/XXYY` label.**
+- [ ] This change is **AIRAC-dependent** and should only go live after a specific AIRAC cycle takes effect.
 
-<!-- If checked, add the airac/XXYY label for that cycle (e.g. airac/2612).
+<!-- If checked, remember to add the matching airac/XXYY label to this PR (e.g. airac/2612).
      The AIRAC Gate check blocks the merge until that cycle's effective date, then passes automatically.
      You can enable auto-merge now: the PR merges on its own once the gate opens. -->
 
