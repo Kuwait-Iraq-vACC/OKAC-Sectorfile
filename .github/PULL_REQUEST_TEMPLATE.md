@@ -1,49 +1,23 @@
-<!--
-Thanks for contributing! Fill in what applies and delete the rest.
-The PR title becomes the commit message on main, so describe the change, e.g.
-"Add NOTAM A0481/26 Gate 24 closure at OKKK".
--->
+<!-- ===== GUIDELINES (delete this section) ===== -->
 
-## Summary
+> [!IMPORTANT]
+> TopSky, GRplugin files in `OKAC/Plugins/` are generated from `.data/`. Make the change in `.data/`, or it is overwritten on the next build.
 
-<!-- What does this change, and why? -->
+<!-- ===== GUIDELINES (delete everything above) ===== -->
 
-## Related Issues
+### Description
 
-<!-- "Fixes #123" closes the issue when this merges. Use "Refs #123" for partial work. -->
+<!-- What does this PR change and why? Link the issue it closes, e.g. "Fixes #123". -->
 
-Fixes #
+### AIRAC dependency
 
-## Type of Change
+- [ ] This change is **AIRAC-dependent** and should only go live after a specific AIRAC cycle takes effect. **Add the matching `airac/XXYY` label.**
 
-- [ ] Real-world data update (AIP amendment, NOTAM, charts)
-- [ ] Bug fix
-- [ ] New feature or improvement
-- [ ] Plugin update or configuration
-- [ ] Profile (.prf) / ASR / settings change
-- [ ] CI, scripts or repository housekeeping
+<!-- If checked, add the airac/XXYY label for that cycle (e.g. airac/2612).
+     The AIRAC Gate check blocks the merge until that cycle's effective date, then passes automatically.
+     You can enable auto-merge now: the PR merges on its own once the gate opens. -->
 
-## Source / Reference
+### Checklist
 
-<!-- AIP section or amendment, NOTAM number, chart or link. Required for real-world data changes. -->
-
-## AIRAC
-
-<!--
-If this must not merge before an AIRAC cycle takes effect, add the matching
-`airac/NNNN` label. The AIRAC Gate check then blocks the merge until the
-effective date. Enable auto-merge and it merges on its own once the gate opens.
--->
-
-- [ ] Can merge now
-- [ ] Waits for an AIRAC cycle (label `airac/____` added)
-
-## Checklist
-
-- [ ] Generated plugin files (TopSky, GRplugin) were changed in their sources under `.data/`, not by editing `OKAC/Plugins/` directly.
-- [ ] Loaded the affected profile(s) in EuroScope and checked the change works, with no new errors.
-- [ ] Screenshots attached for visual changes (maps, layouts, symbology).
-
-## Screenshots
-
-<!-- Before / after, if visual. -->
+- [ ] I have verified the data against its source (AIP, NOTAM, charts).
+- [ ] I have tested the change in EuroScope.
