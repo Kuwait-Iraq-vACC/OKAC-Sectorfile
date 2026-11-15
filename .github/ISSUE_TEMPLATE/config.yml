@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: EuroScope setup guide
+    url: http://kuwait-iraqvacc.net/Controller%20Guidance/Software/EuroScope%20Setup/
+    about: Installing EuroScope and the sectorfile. Most loading problems are solved here.
+  - name: Latest sectorfile release
+    url: https://github.com/Kuwait-Iraq-vACC/OKAC-Sectorfile/releases
+    about: Check you are on the newest release before reporting a bug.

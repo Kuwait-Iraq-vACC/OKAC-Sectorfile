@@ -1,24 +1,43 @@
 name: Plugin Report
-description: Report a bug or required change for a EuroScope plugin.
+description: A problem with, or change needed to, a EuroScope plugin or its configuration.
 title: "[PLUGIN]: "
-labels: ["bug"]
+labels: ["plugin"]
 body:
   - type: markdown
     attributes:
-      value: "# Plugin Report"
-  - type: input
+      value: |
+        TopSky and Ground Radar have their own templates. If the problem is in the plugin itself rather than our configuration, it may need to go to the plugin's author, and we will let you know.
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before you submit
+      options:
+        - label: I have searched the [existing issues](https://github.com/Kuwait-Iraq-vACC/OKAC-Sectorfile/issues?q=is%3Aissue) and this has not been reported yet.
+          required: false
+        - label: I am on the [latest release](https://github.com/Kuwait-Iraq-vACC/OKAC-Sectorfile/releases) and the [EuroScope version](http://kuwait-iraqvacc.net/Controller%20Guidance/Software/EuroScope%20Setup/) from the setup guide.
+          required: false
+  - type: dropdown
     id: plugin-name
     attributes:
-      label: Plugin Name
-      description: Which plugin are you reporting an issue for?
-      placeholder: e.g. RDFplugin, DiscordEuroScope
+      label: Plugin
+      description: "Which plugin is the report about?"
+      multiple: false
+      options:
+        - "AMAN"
+        - "CDM"
+        - "KWIQ Controller Plugin"
+        - "P21Euroscope"
+        - "vATIS"
+        - "VFPC"
+        - "vSID"
+        - "Other (say which below)"
     validations:
-      required: true
+      required: false
   - type: input
     id: plugin-version
     attributes:
       label: Plugin Version
-      description: Which version of the plugin are you running?
+      description: "Shown under Other SET > Plug-ins in EuroScope."
       placeholder: e.g. 1.0.0
     validations:
       required: false
@@ -26,42 +45,78 @@ body:
     id: description
     attributes:
       label: Description
-      description: A clear and concise description of the bug or change required.
+      description: "What is wrong, or what needs to change?"
     validations:
       required: true
   - type: textarea
     id: reproduce
     attributes:
       label: To Reproduce
-      description: Provide steps to reproduce the behavior, if applicable.
+      description: "Steps that make the problem appear."
+      placeholder: |
+        1. Load the ... profile
+        2. Connect as ...
+        3. Open ...
+        4. See ...
     validations:
       required: false
   - type: textarea
     id: expected-behavior
     attributes:
       label: Expected Behavior
-      description: A clear and concise description of what you expected to happen.
+      description: "What should happen instead?"
     validations:
       required: false
   - type: textarea
     id: screenshots
     attributes:
       label: Screenshots
-      description: If applicable, add screenshots to help explain your problem.
+      description: "Drag images here. Radar screen captures make display problems much faster to fix."
+    validations:
+      required: false
+  - type: dropdown
+    id: profiles
+    attributes:
+      label: Profile(s)
+      description: "Which .prf profile(s) show the problem?"
+      multiple: true
+      options:
+        - "Kuwait Aerodrome"
+        - "Kuwait Military"
+        - "Kuwait Radar - Light Mode"
+        - "Kuwait Radar - Realistic"
+        - "Kuwait Terminal"
+        - "All / not profile specific"
     validations:
       required: false
   - type: input
     id: sectorfile-airac
     attributes:
       label: Sectorfile AIRAC
-      description: What sectorfile version are you using?
+      description: "Shown in OKAC/Plugins/AIRAC_VERSION.txt."
       placeholder: e.g. 2611
+    validations:
+      required: false
+  - type: input
+    id: euroscope-version
+    attributes:
+      label: EuroScope Version
+      description: "The EuroScope build you are running."
+      placeholder: e.g. 3.2.3.2 or 3.2.9
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Messages / Logs
+      description: "Paste any EuroScope or plugin error message. It is formatted as code automatically."
+      render: text
     validations:
       required: false
   - type: textarea
     id: additional-context
     attributes:
       label: Additional Context
-      description: Add any other context about the problem here.
+      description: "Anything else that helps."
     validations:
       required: false

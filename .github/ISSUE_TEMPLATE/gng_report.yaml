@@ -1,39 +1,71 @@
 name: GNG Report
-description: Report a bug, or a change required for to update on GNG.
+description: Wrong or outdated data in the GNG (aero-nav) sector file package.
 title: "[GNG]: "
 labels: ["enhancement", "GNG"]
 body:
   - type: markdown
     attributes:
-      value: "# GNG Report"
-  - type: markdown
+      value: |
+        Use this for data published through GNG: airspace, navaids, fixes, procedures, runways, frequencies and positions. Please cite the source so the change can be checked against the AIP.
+  - type: checkboxes
+    id: preflight
     attributes:
-      value: "Before reporting a bug, ensure that you have the correct [EuroScope version](http://kuwait-iraqvacc.net/Controller%20Guidance/Software/EuroScope%20Setup/) and that you have the latest sectorfile installed."
+      label: Before you submit
+      options:
+        - label: I have searched the [existing issues](https://github.com/Kuwait-Iraq-vACC/OKAC-Sectorfile/issues?q=is%3Aissue) and this has not been reported yet.
+          required: false
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: Describe the changes, or bug, you are reporting.
+      description: "What is wrong or out of date, and where?"
+      placeholder: |
+        e.g. NDB PWR is listed on 135.400, which is a VHF frequency.
     validations:
       required: true
   - type: textarea
-    id: screenshots
+    id: reference
     attributes:
-      label: Screenshots
-      description: If applicable, add screenshots to help explain your problem.
+      label: Source / Reference
+      description: "AIP section or amendment, NOTAM number, chart or link that backs up the change. Required for real-world data changes."
+      placeholder: |
+        e.g. AIP AD 2.24, AIP AMDT 11/26, NOTAM A0481/26
     validations:
       required: false
   - type: textarea
     id: fix
     attributes:
-      label: Fixes
-      description: Describe the fix, or change, you are proposing to resolve the issue if known.
+      label: Proposed Fix
+      description: "The correct value or change, if known."
+    validations:
+      required: false
+  - type: input
+    id: aerodrome
+    attributes:
+      label: Aerodrome / Sector
+      description: "ICAO code(s) or sector name, if specific to one."
+      placeholder: e.g. OKKK
+    validations:
+      required: false
+  - type: input
+    id: sectorfile-airac
+    attributes:
+      label: Sectorfile AIRAC
+      description: "Shown in OKAC/Plugins/AIRAC_VERSION.txt."
+      placeholder: e.g. 2611
+    validations:
+      required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: "Drag images here. Radar screen captures make display problems much faster to fix."
     validations:
       required: false
   - type: textarea
     id: additional-context
     attributes:
       label: Additional Context
-      description: Add any other context about the problem here.
+      description: "Anything else that helps."
     validations:
       required: false
