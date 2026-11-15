@@ -1,28 +1,32 @@
 name: General Report
-description: Report a general issue or query.
+description: A question, suggestion or anything that does not fit another template.
 title: "[GENERAL]: "
 body:
-  - type: markdown
+  - type: checkboxes
+    id: preflight
     attributes:
-      value: "# General Report"
+      label: Before you submit
+      options:
+        - label: I have searched the [existing issues](https://github.com/Kuwait-Iraq-vACC/OKAC-Sectorfile/issues?q=is%3Aissue) and this has not been reported yet.
+          required: false
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: A clear and concise description of the issue or query.
+      description: "What is your question or suggestion?"
     validations:
       required: true
   - type: textarea
     id: screenshots
     attributes:
       label: Screenshots
-      description: If applicable, add screenshots to help explain your problem.
+      description: "Drag images here. Radar screen captures make display problems much faster to fix."
     validations:
       required: false
   - type: textarea
     id: additional-context
     attributes:
       label: Additional Context
-      description: Add any other context about the issue here.
+      description: "Anything else that helps."
     validations:
       required: false
