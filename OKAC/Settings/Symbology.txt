@@ -28,7 +28,7 @@ Datablock:notified:16777215:3.5:0:0:7
 Datablock:assumed:8257405:3.5:0:0:7
 Datablock:transfer to me initiated:15658734:3.5:0:0:7
 Datablock:redundant:15067164:3.5:0:0:7
-Datablock:information:8453888:3.5:0:0:7
+Datablock:information:4210943:3.5:0:0:7
 Datablock:even flight level:16777215:3.5:0:0:7
 Datablock:odd flight level:16777215:3.5:0:0:7
 Datablock:arrivals:16777215:3.5:0:0:7
