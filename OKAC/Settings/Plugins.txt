@@ -26,8 +26,8 @@ TopSky plugin:ACList/HOLDING LIST/m_Column_4: CFL:5:0:10002:12:99:1:TopSky plugi
 TopSky plugin:ACList/HOLDING LIST/m_Column_5:HPT:6:0:10024:65:0:1:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/HOLDING LIST/m_Column_6:ETO:4:0:10036:0:0:1:TopSky plugin::
 TopSky plugin:ACList/LOAD/m_Visible:0
-TopSky plugin:ACList/LOAD/m_X:20
-TopSky plugin:ACList/LOAD/m_Y:20
+TopSky plugin:ACList/LOAD/m_X:703
+TopSky plugin:ACList/LOAD/m_Y:425
 TopSky plugin:ACList/LOAD/m_LineNumber:1
 TopSky plugin:ACList/LOAD/m_Resizable:1
 TopSky plugin:ACList/LOAD/m_OrderingColumn:1
@@ -55,7 +55,7 @@ TopSky plugin:ACList/SECTOR LIST/m_Column_12:RWY:3:1:10010:19:19:1:TopSky plugin
 TopSky plugin:ACList/SECTOR LIST/m_Column_13:COPN:6:1:10004:45:99:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/SECTOR LIST/m_Column_14:ETN:5:1:10016:0:0:1:TopSky plugin::
 TopSky plugin:ACList/SECTOR LIST/m_Column_15: PEL:5:0:10001:68:0:1:TopSky plugin:TopSky plugin:
-TopSky plugin:ACList/SECTOR LIST/m_Column_16:COPX:5:1:10005:45:99:1:TopSky plugin:TopSky plugin:TopSky plugin
+TopSky plugin:ACList/SECTOR LIST/m_Column_16:COPX:6:1:10005:45:99:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/SECTOR LIST/m_Column_17:ETX:5:1:10017:0:0:0:TopSky plugin::
 TopSky plugin:ACList/SECTOR LIST/m_Column_18: XFL:5:1:10003:105:110:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/Uncontrolled List 1/m_Visible:0
@@ -129,4 +129,5 @@ CDM Plugin:CDMWindowPositionY:24
 CDM Plugin:CDMMinimized:1
 KWIQ Controller Plugin:kwiq_squawk_auto:1
 TopSky plugin:ACList/Sector List/m_Column_19:TXT:10:0:38:2:0:1:TopSky plugin:TopSky plugin:
+TopSky plugin:ACList/LOAD/m_Column_2:COPN:7:0:10004:45:170:1:TopSky plugin:TopSky plugin:TopSky plugin
 END
