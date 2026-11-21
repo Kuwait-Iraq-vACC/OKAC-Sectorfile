@@ -300,6 +300,12 @@ def collect_basic_config():
         if key not in options or not options[key]:
             options[key] = prompt_for_field(key, "")
 
+    if options.get("discordeuroscope") not in ("0", "1"):
+        options["discordeuroscope"] = "1" if ask_yesno(
+            "Show what you are controlling on your Discord profile (DiscordEuroScope)?\n\n"
+            "You can change this later in EuroScope with the KWIQ button's menu."
+        ) else "0"
+
     return options
 
 # ── File patchers ──────────────────────────────────────────────────────────────
@@ -418,8 +424,37 @@ def patch_topsky_cpdlc(cpdlc_code):
                 except Exception as e:
                     print(f"Failed to write {full_path}: {e}")
 
+def patch_plugins_settings(discordeuroscope):
+    """
+    DiscordEuroScope is built into the KWIQ Controller Plugin, which reads its on/off setting from
+    Settings/Plugins.txt: KWIQ Controller Plugin:DiscordEuroScope:1 (or 0). The KWIQ menu sets the same line.
+    """
+    path = os.path.join(SETTINGS_DIR, "Plugins.txt")
+    if not os.path.exists(path):
+        print(f"Plugins.txt not found at {path}")
+        return
+    try:
+        with open(path, "r", encoding="utf-8", newline="") as f:
+            lines = f.readlines()
+    except Exception as e:
+        print(f"Failed to read {path}: {e}")
+        return
+    eol = "\r\n" if lines and lines[0].endswith("\r\n") else "\n"
+    lines = [l for l in lines if not l.startswith("KWIQ Controller Plugin:DiscordEuroScope:")]
+    entry = f"KWIQ Controller Plugin:DiscordEuroScope:{discordeuroscope}{eol}"
+    at = next((i + 1 for i, l in enumerate(lines) if l.strip() == "PLUGINS"), None)
+    if at is None:
+        lines = [f"PLUGINS{eol}", entry] + lines
+    else:
+        lines.insert(at, entry)
+    try:
+        with open(path, "w", encoding="utf-8", newline="") as f:
+            f.writelines(lines)
+    except Exception as e:
+        print(f"Failed to write {path}: {e}")
+
 # ── Main apply ─────────────────────────────────────────────────────────────────
-def apply_configuration(name, initials, cid, rating, password, cpdlc):
+def apply_configuration(name, initials, cid, rating, password, cpdlc, discordeuroscope="1"):
     """Walk the package root and patch all relevant files."""
     for root, _, files in walk_pack(PACK_ROOT):
         for file in files:
@@ -435,6 +470,7 @@ def apply_configuration(name, initials, cid, rating, password, cpdlc):
         print(f"Settings folder not found at {SETTINGS_DIR}")
 
     patch_topsky_cpdlc(cpdlc)
+    patch_plugins_settings(discordeuroscope)
 
 # ── Entry point ────────────────────────────────────────────────────────────────
 def main():
@@ -463,6 +499,7 @@ def main():
             rating=options["rating"],
             password=options["password"],
             cpdlc=options["cpdlc"],
+            discordeuroscope=options.get("discordeuroscope", "1"),
         )
 
         # 3. Persist options for next run
