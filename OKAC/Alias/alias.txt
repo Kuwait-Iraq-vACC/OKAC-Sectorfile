@@ -24,13 +24,13 @@
 
 ;*** Letters of Agreement ***
 
-.hfr Hello. You will soon enter my airspace. Descend FL170 level by HFR. Expect to contact me on $com.
-.kumbo Hello. You will soon enter my airspace. Descend FL220 level by KUMBO. Expect to contact me on $com.
-.sidad Hello. You will soon enter my airspace. Descend FL170 level by SIDAD. Expect to contact me on $com.
-.tulax Hello. You will soon enter my airspace. Descend FL240 level by TULAX. Expect to contact me on $com.
-.nanpi Hello. You will soon enter my airspace. Descend FL280 level by NANPI. Expect to contact me on $com.
-.asvir Hello. You will soon enter my airspace. Descend FL160 level by ASVIR. Expect to contact me on $com.
-.kunru Hello. You will soon enter my airspace. Descend FL160 level by KUNRU. Expect to contact me on $com.
+.hfr .msg $aircraft Hello. You will soon enter my airspace. Descend FL170 level by HFR. Expect to contact me on $com.
+.kumbo .msg $aircraft Hello. You will soon enter my airspace. Descend FL220 level by KUMBO. Expect to contact me on $com.
+.sidad .msg $aircraft Hello. You will soon enter my airspace. Descend FL170 level by SIDAD. Expect to contact me on $com.
+.tulax .msg $aircraft Hello. You will soon enter my airspace. Descend FL240 level by TULAX. Expect to contact me on $com.
+.nanpi .msg $aircraft Hello. You will soon enter my airspace. Descend FL280 level by NANPI. Expect to contact me on $com.
+.asvir .msg $aircraft Hello. You will soon enter my airspace. Descend FL160 level by ASVIR. Expect to contact me on $com.
+.kunru .msg $aircraft Hello. You will soon enter my airspace. Descend FL160 level by KUNRU. Expect to contact me on $com.
 
 ;*** Logging On/Off ***
 
