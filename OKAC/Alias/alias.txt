@@ -1,4 +1,3 @@
-
 ;*** All Alias ***
 ;*** General ***
 
@@ -24,24 +23,24 @@
 
 ;*** Letters of Agreement ***
 
-.hfr Hello. You will soon enter my airspace. Descend FL170 level by HFR. Expect to contact me on $com.
-.kumbo Hello. You will soon enter my airspace. Descend FL220 level by KUMBO. Expect to contact me on $com.
-.sidad Hello. You will soon enter my airspace. Descend FL170 level by SIDAD. Expect to contact me on $com.
-.tulax Hello. You will soon enter my airspace. Descend FL240 level by TULAX. Expect to contact me on $com.
-.nanpi Hello. You will soon enter my airspace. Descend FL280 level by NANPI. Expect to contact me on $com.
-.asvir Hello. You will soon enter my airspace. Descend FL160 level by ASVIR. Expect to contact me on $com.
-.kunru Hello. You will soon enter my airspace. Descend FL160 level by KUNRU. Expect to contact me on $com.
+.hfr .msg $aircraft Hello. You will soon enter my airspace. Descend FL170 level by HFR. Expect to contact me on $com.
+.kumbo .msg $aircraft Hello. You will soon enter my airspace. Descend FL220 level by KUMBO. Expect to contact me on $com.
+.sidad .msg $aircraft Hello. You will soon enter my airspace. Descend FL170 level by SIDAD. Expect to contact me on $com.
+.tulax .msg $aircraft Hello. You will soon enter my airspace. Descend FL240 level by TULAX. Expect to contact me on $com.
+.nanpi .msg $aircraft Hello. You will soon enter my airspace. Descend FL280 level by NANPI. Expect to contact me on $com.
+.asvir .msg $aircraft Hello. You will soon enter my airspace. Descend FL160 level by ASVIR. Expect to contact me on $com.
+.kunru .msg $aircraft Hello. You will soon enter my airspace. Descend FL160 level by KUNRU. Expect to contact me on $com.
 
 ;*** Logging On/Off ***
 
-.on /Hello, $radioname is online
+.on /Hello, $radioname ($atccallsign) is online
 .welcome Hello, welcome. Departing RWY$deprwy($1) arriving RWY$arrrwy($1). Information $atiscode($1). Zone $2
 .nh /Closing soon, no handoffs. 
 .off /$radioname is now closed. 
 .off5 /$radioname is closing in 5 minutes. 
 .off10 /$radioname is closing in 10 minutes. 
 .offh /$radioname is closing on the hour. 
-.cl ALL STATIONS, ALL STATIONS, $radioname ($callsign) is now closing. Monitor $radioname($1) ($atccallsign($1)), $freq($1)
+.close ALL STATIONS, ALL STATIONS, $radioname ($callsign) is now closing. Monitor $radioname($1) ($atccallsign($1)), $freq($1)
 .cluni ALL STATIONS, ALL STATIONS, $radioname ($callsign) is now closing. Monitor advisory, 122.800
 .cladv ALL STATIONS, ALL STATIONS, $radioname ($callsign) is now closing. Monitor advisory, 122.800
 .clho ALL STATIONS, ALL STATIONS, $radioname ($callsign) is now closing. Monitor advisory, 122.800
@@ -115,6 +114,7 @@
 
 ;*** Departure Clearances ***
 
+.cl Cleared to $arr, $sid departure, climb altitude $temp, squawk $squawk 
 .clr Cleared to $arr, $sid departure, climb altitude $temp, squawk $squawk 
 .clrhdg Cleared to $arr, after departure runway $1 climb straight ahead altitude $temp, squawk $squawk 
 .clrvec Cleared to $arr, after departure runway $1 fly heading $2, climb altitude $temp, squawk $squawk

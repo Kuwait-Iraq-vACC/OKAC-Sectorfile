@@ -4,7 +4,8 @@ Setup_COOPANS=1
 Setup_AutoSignIn=1
 
 Areas_NOTAM_Activation=1
-Airspace_ASSR_Type=2
+Airspace_ASSR_Type=0
+Airspace_ASSR_AutoAssign_Type=0
 
 RDF_Mode=-1
 RDF_Floor=0
