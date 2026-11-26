@@ -25,10 +25,10 @@ body:
       options:
         - "AMAN"
         - "CDM"
+        - "FPC"
         - "KWIQ Controller Plugin"
         - "P21Euroscope"
         - "vATIS"
-        - "VFPC"
         - "vSID"
         - "Other (say which below)"
     validations:
