@@ -111,7 +111,7 @@ body:
     attributes:
       label: Sectorfile AIRAC
       description: "Shown in OKAC/Plugins/AIRAC_VERSION.txt."
-      placeholder: e.g. 2611/01
+      placeholder: e.g. 2612/01
     validations:
       required: false
   - type: textarea
