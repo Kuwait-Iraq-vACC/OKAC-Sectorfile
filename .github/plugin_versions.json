@@ -30,7 +30,7 @@
   "vSID": {
     "schemaVersion": 1,
     "label": "vSID",
-    "message": "0.16.0",
+    "message": "0.16.0.1-f6ce1b4",
     "color": "blue",
     "repo": "Gameagle/vSID"
   }
